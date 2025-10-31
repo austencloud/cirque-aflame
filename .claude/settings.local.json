@@ -23,7 +23,10 @@
       "Bash(xargs:*)",
       "Bash(npm uninstall:*)",
       "Bash(timeout 30 npm run dev:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(TASKKILL:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Cirque Aflame monorepo\n\n- CircusSync app: Production company management system with Firebase backend\n- Cirque website: Public-facing marketing site  \n- Font Awesome icons: Migrated from lucide-svelte to Font Awesome\n- Fixed route conflicts in cirque-app\n- Configured .gitignore and Playwright MCP server\n- Project structure includes contract generation and performer management\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
