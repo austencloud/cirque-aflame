@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm audit:*)",
+      "Bash(npx svelte-check:*)",
+      "Bash(npx sv create cirque-website)",
+      "Bash(npm update:*)",
+      "Bash(git init:*)",
+      "Bash(test:*)",
+      "Bash(git remote add:*)",
+      "Bash(npx svelte-kit sync:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(git reset:*)",
+      "Bash(git rm:*)",
+      "Bash(taskkill:*)",
+      "Bash(nul)",
+      "Bash(pkill:*)",
+      "Bash(netstat:*)",
+      "Bash(awk:*)",
+      "Bash(xargs:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(timeout 30 npm run dev:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
