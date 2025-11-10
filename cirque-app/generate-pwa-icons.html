@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CircusSync PWA Icon Generator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .icon-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        canvas {
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #8B5CF6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        button:hover {
+            background: #7C3AED;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+        }
+        .download-all {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .download-all button {
+            font-size: 18px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎪 CircusSync PWA Icon Generator</h1>
+
+        <div class="icons-grid">
+            <div class="icon-item">
+                <h3>Standard Icon 192x192</h3>
+                <canvas id="icon192" width="192" height="192"></canvas>
+                <p>For general use on all devices</p>
+                <button onclick="downloadIcon('icon192', 'icon-192.png')">Download</button>
+            </div>
+
+            <div class="icon-item">
+                <h3>Standard Icon 512x512</h3>
+                <canvas id="icon512" width="512" height="512"></canvas>
+                <p>High resolution for large displays</p>
+                <button onclick="downloadIcon('icon512', 'icon-512.png')">Download</button>
+            </div>
+
+            <div class="icon-item">
+                <h3>Maskable Icon 192x192</h3>
+                <canvas id="maskable192" width="192" height="192"></canvas>
+                <p>Adaptive icon for Android</p>
+                <button onclick="downloadIcon('maskable192', 'icon-maskable-192.png')">Download</button>
+            </div>
+
+            <div class="icon-item">
+                <h3>Maskable Icon 512x512</h3>
+                <canvas id="maskable512" width="512" height="512"></canvas>
+                <p>High-res adaptive icon</p>
+                <button onclick="downloadIcon('maskable512', 'icon-maskable-512.png')">Download</button>
+            </div>
+
+            <div class="icon-item">
+                <h3>Favicon 32x32</h3>
+                <canvas id="favicon" width="32" height="32"></canvas>
+                <p>Browser tab icon</p>
+                <button onclick="downloadIcon('favicon', 'favicon.png')">Download</button>
+            </div>
+
+            <div class="icon-item">
+                <h3>Apple Touch Icon 180x180</h3>
+                <canvas id="apple180" width="180" height="180"></canvas>
+                <p>iOS home screen icon</p>
+                <button onclick="downloadIcon('apple180', 'apple-touch-icon.png')">Download</button>
+            </div>
+        </div>
+
+        <div class="download-all">
+            <button onclick="downloadAllIcons()">📦 Download All Icons</button>
+            <p style="margin-top: 15px;">Icons will be downloaded individually. Place them in the <code>static/</code> folder.</p>
+        </div>
+    </div>
+
+    <script>
+        function drawStandardIcon(canvas, isMaskable = false) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+            const padding = isMaskable ? size * 0.1 : 0;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+
+            // Background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+
+            // If maskable, add safe zone padding
+            const iconSize = size - (padding * 2);
+            const iconX = padding;
+            const iconY = padding;
+
+            // Draw circus tent emoji or custom design
+            ctx.save();
+            ctx.translate(iconX, iconY);
+
+            // White circle background for the icon
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.beginPath();
+            ctx.arc(iconSize / 2, iconSize / 2, iconSize * 0.38, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Draw tent stripes
+            const stripeCount = 6;
+            const centerX = iconSize / 2;
+            const centerY = iconSize / 2;
+            const radius = iconSize * 0.3;
+
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `bold ${iconSize * 0.5}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🎪', centerX, centerY);
+
+            // Add "CS" text for CircusSync
+            if (!isMaskable || size > 300) {
+                ctx.fillStyle = '#ffffff';
+                ctx.font = `bold ${iconSize * 0.15}px -apple-system, sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+                ctx.fillText('CircusSync', centerX, iconSize * 0.8);
+            }
+
+            ctx.restore();
+        }
+
+        function drawFavicon(canvas) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+
+            // Simple tent emoji
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `${size * 0.7}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🎪', size / 2, size / 2);
+        }
+
+        function downloadIcon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const url = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = url;
+            link.click();
+        }
+
+        function downloadAllIcons() {
+            const icons = [
+                ['icon192', 'icon-192.png'],
+                ['icon512', 'icon-512.png'],
+                ['maskable192', 'icon-maskable-192.png'],
+                ['maskable512', 'icon-maskable-512.png'],
+                ['favicon', 'favicon.png'],
+                ['apple180', 'apple-touch-icon.png']
+            ];
+
+            icons.forEach(([canvasId, filename], index) => {
+                setTimeout(() => {
+                    downloadIcon(canvasId, filename);
+                }, index * 500); // Stagger downloads by 500ms
+            });
+        }
+
+        // Generate all icons on page load
+        window.onload = function() {
+            drawStandardIcon(document.getElementById('icon192'), false);
+            drawStandardIcon(document.getElementById('icon512'), false);
+            drawStandardIcon(document.getElementById('maskable192'), true);
+            drawStandardIcon(document.getElementById('maskable512'), true);
+            drawFavicon(document.getElementById('favicon'));
+            drawStandardIcon(document.getElementById('apple180'), false);
+        };
+    </script>
+</body>
+</html>

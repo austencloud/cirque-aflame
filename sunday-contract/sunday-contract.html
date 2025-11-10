@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Festival Performance Agreement</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #3a0ca3;
+            --secondary-color: #f72585;
+            --accent-color: #4cc9f0;
+            --text-color: #333333;
+            --light-color: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.2;
+            color: var(--text-color);
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            font-size: 8.5pt;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .banner-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            padding: 6px 25px 2px;
+        }
+
+        .effective-date {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 4px;
+            font-size: 0.8rem;
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
+            margin: 4px 0;
+        }
+
+        .parties {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 25px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .party {
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .party:first-child {
+            border-right: 1px solid var(--border-color);
+            padding-left: 0;
+        }
+
+        .party:last-child {
+            padding-right: 0;
+        }
+
+        .party h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 3px;
+            font-size: 0.95rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 2px;
+            display: inline-block;
+        }
+
+        .party p {
+            margin: 1px 0;
+            font-size: 0.8rem;
+        }
+
+        .location-date {
+            background-color: var(--light-color);
+            padding: 4px 25px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 4px;
+            font-size: 0.8rem;
+        }
+
+        .section {
+            margin-bottom: 4px;
+            background-color: white;
+            padding: 0 10px;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin: 0 0 3px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 2px;
+        }
+
+        .section ul {
+            padding-left: 16px;
+            margin: 2px 0;
+        }
+
+        .section ul li {
+            margin-bottom: 2px;
+            font-size: 0.8rem;
+        }
+
+        .section p {
+            margin: 2px 0;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .section ul ul {
+            margin: 2px 0;
+        }
+
+        .signatures {
+            padding: 6px 25px;
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--light-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .signature {
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .signature:first-child {
+            border-right: 1px solid var(--border-color);
+            padding-left: 0;
+        }
+
+        .signature:last-child {
+            padding-right: 0;
+        }
+
+        .signature h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+        .signature-line {
+            border-bottom: 2px solid var(--text-color);
+            padding-bottom: 25px;
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        .signature p {
+            margin: 1px 0;
+            font-size: 0.7rem;
+            color: #555;
+        }
+
+        .signature .date-line {
+            margin-top: 8px;
+            font-size: 0.8rem;
+        }
+
+        .signature .date-input {
+            display: inline-block;
+            border-bottom: 2px solid var(--text-color);
+            min-width: 200px;
+            padding-bottom: 2px;
+            margin-left: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 5px;
+            font-size: 0.7rem;
+            color: #666;
+            background-color: #f2f2f2;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        @media print {
+            body {
+                font-size: 8.5pt;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .signatures {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner-container">
+            <img src="Simple Banner.png" alt="Cirque Aflame Banner" class="banner-image">
+        </div>
+
+        <div class="content">
+            <p class="effective-date">This Agreement (the "Agreement") is entered into as of <span class="highlight">October 23, 2025</span> (effective date), between <span class="highlight">Maricruz Sauer</span> ("Client") and <span class="highlight">Cirque Aflame</span> ("Producer"), with regard to the facts set forth herein. The performance will be carried out by <span class="highlight">Austen Cloud and co-performer</span> (collectively, the "Performers") for <span class="highlight">Halloween Festival Performance Services</span>.</p>
+
+            <div class="divider"></div>
+        </div>
+
+        <div class="parties">
+            <div class="party">
+                <h3>CLIENT</h3>
+                <p><strong>Name:</strong> Maricruz Sauer</p>
+                <p><strong>Phone:</strong> 773-384-2672</p>
+                <p><strong>Email:</strong> maricruz@wickerparkbucktown.com</p>
+                <p><strong>Title:</strong> Event Coordinator, Wicker Park Bucktown Chamber of Commerce</p>
+            </div>
+
+            <div class="party">
+                <h3>PRODUCER</h3>
+                <p><strong>Name:</strong> Cirque Aflame</p>
+                <p><strong>Show Manager:</strong> Austen Cloud</p>
+                <p><strong>Phone:</strong> 872-226-7692</p>
+                <p><strong>Email:</strong> cirque.aflame@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="location-date">
+            <div>
+                <strong>Location:</strong> Milwaukee & Wood, Wicker Park, Chicago, IL
+            </div>
+            <div>
+                <strong>Date:</strong> October 26, 2025 (Sunday)
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>1. FEES PAYABLE TO THE PERFORMER</h2>
+                <ul>
+                    <li>Total fee for the performance is <span class="highlight">$1,200.00 USD</span>.</li>
+                    <li>Full payment of <span class="highlight">$1,200.00 USD</span> is due on the day of performance.</li>
+                    <li>Payment will be made by business check.</li>
+                    <li>'Completion' is defined as the end of the scheduled 3-hour performance or the moment the Performers cease performing due to unforeseen circumstances. Full payment remains due unless otherwise agreed in writing.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. SERVICES</h2>
+                <ul>
+                    <li><strong>Event:</strong> Wicker Park Halloween Festival</li>
+                    <li><strong>Performance Details:</strong> 3-hour street performance featuring two performers:
+                        <ul>
+                            <li>Stilt-walking Jack Skellington character</li>
+                            <li>Austen Cloud - Juggling pirate character</li>
+                        </ul>
+                    </li>
+                    <li><strong>Performance Schedule:</strong>
+                        <ul>
+                            <li>12:45 PM: Performers arrive for setup</li>
+                            <li>1:00 PM - 4:00 PM: Street performance</li>
+                        </ul>
+                    </li>
+                    <li><strong>Costumes:</strong> Professional Halloween-themed costumes (Jack Skellington and pirate).</li>
+                    <li><strong>Equipment:</strong> All performance equipment will be provided by the Performers, including stilts and juggling props.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. CANCELLATION AND REFUND</h2>
+                <ul>
+                    <li>If Client cancels, Cirque Aflame will offer a backup date within one year, subject to availability (more likely with 2+ weeks notice).</li>
+                    <li>If Producer cancels, payment may be applied toward rescheduling or waived entirely.</li>
+                    <li>For severe weather, health emergencies, or force majeure events, both parties will work together to reschedule, modify, or cancel the performance as appropriate.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. LATE ARRIVAL & CHANGE OF SCHEDULE</h2>
+                <ul>
+                    <li>Full fee remains due even if performance is shortened at Client's request.</li>
+                    <li>Performers will accommodate schedule delays under 30 minutes. Longer delays may result in modified performance duration, with full fee remaining due.</li>
+                    <li>Changes to performance date or time must be communicated as soon as possible. Changes within 48 hours are subject to performer availability.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. OBLIGATIONS</h2>
+                <p>Producer:</p>
+                <ul>
+                    <li>Will ensure timely preparation and optimal performance delivery.</li>
+                    <li>Will maintain confidentiality of Client information.</li>
+                    <li>Will arrive with all necessary performance equipment and costumes.</li>
+                    <li>May substitute performers with Client's consent, providing replacements of comparable skill and experience with advance notice when possible.</li>
+                    <li>Will maintain professional conduct and collaborate with event staff.</li>
+                </ul>
+
+                <p>Client:</p>
+                <ul>
+                    <li>Will ensure a safe performance area appropriate for street performance and stilt-walking.</li>
+                    <li>Will adhere to all terms and event setup responsibilities.</li>
+                    <li>Will provide accurate information regarding venue, audience, and technical requirements.</li>
+                    <li>Will inform Performers of any special circumstances that may affect the performance.</li>
+                    <li>Will provide access to a private changing area (bathroom minimum) for performers.</li>
+                </ul>
+
+                <p>Venue Requirements:</p>
+                <ul>
+                    <li>Performance area must be suitable for street performance and stilt-walking (level ground, sufficient space for crowd interaction).</li>
+                    <li>No overhead obstacles that would interfere with stilt-walking (minimum 10 feet clearance).</li>
+                    <li>Access to restroom facilities and private changing area required.</li>
+                    <li>Client confirms that street performance and stilt-walking are permitted at the event location.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. HEALTH AND SAFETY</h2>
+                <ul>
+                    <li>Both parties agree to uphold safety as a priority. Producer may modify or cancel performance if conditions are unsafe.</li>
+                    <li>Performance area must be reasonably free of obstacles and hazards, with stable, level ground suitable for stilt-walking.</li>
+                    <li>Performers will conduct a brief safety evaluation upon arrival and may suggest location adjustments.</li>
+                    <li>Performers carry professional liability insurance through Specialty Insurance for all performance activities.</li>
+                    <li>Each party agrees to indemnify and hold harmless the other from claims arising from their own negligent acts or omissions.</li>
+                    <li>Any disputes related to this contract shall be governed by the laws of the State of Illinois.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. COMMUNICATION & MEDIA RIGHTS</h2>
+                <ul>
+                    <li>Austen Cloud will serve as the performance manager for this event and will be the primary contact for all day-of logistics and questions.</li>
+                    <li>Both Client and Producer may freely use, share, and publish photographs and videos from the performance for promotional and personal purposes.</li>
+                    <li>Client agrees to credit "Cirque Aflame" when sharing professional photos or videos from the performance on social media or other public platforms.</li>
+                    <li>Producer may list the Client's event in its portfolio and promotional materials unless Client specifically requests otherwise.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="signatures">
+            <div class="signature">
+                <h3>CLIENT SIGNATURE</h3>
+                <div class="signature-line"></div>
+                <p>For Wicker Park Bucktown Chamber of Commerce</p>
+                <p>Name: Maricruz Sauer</p>
+                <p class="date-line">Date: <span class="date-input"></span></p>
+            </div>
+
+            <div class="signature">
+                <h3>PRODUCER SIGNATURE</h3>
+                <div class="signature-line"></div>
+                <p>For Cirque Aflame</p>
+                <p>Name: Austen Cloud</p>
+                <p class="date-line">Date: <span class="date-input"></span></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Cirque Aflame | This document is legally binding once signed by both parties.</p>
+        </div>
+    </div>
+</body>
+</html>

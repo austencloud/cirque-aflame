@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Get-ChildItem -Path src -Recurse -Include *.svelte,*.ts | ForEach-Object { (Get-Content $_.FullName) -replace \"\"from ''\\$lib/state/(\\w+)''\"\", \"\"from ''$lib/state/$1.svelte.ts''\"\" -replace ''from \"\"\\$lib/state/(\\w+)\"\"'', ''from \"\"$lib/state/$1.svelte.ts\"\"'' | Set-Content $_.FullName }\")",
+      "Bash(bash \"F:\\_CIRQUE AFLAME\\_CODE\\cirque-app\\fix-imports.sh\")",
+      "Bash(npx playwright:*)",
+      "Bash(npm run seed:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(npm run test:*)",
+      "Bash(timeout 30 tail:*)",
+      "Bash(exit 0)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout 5 echo:*)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(del postcss.config.js)",
+      "Bash(timeout 3 echo:*)",
+      "Bash(timeout 60 tail:*)",
+      "Bash(del tests08-agents.spec.ts tests09-contracts.spec.ts tests10-tasks.spec.ts)",
+      "Bash(cat:*)",
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(curl:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File scripts/remove-tailwind-bulk.ps1)",
+      "Bash(node scripts/remove-tailwind-classes.js:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

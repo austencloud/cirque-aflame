@@ -1,0 +1,302 @@
+
+> circussync@0.1.0 check
+> svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
+
+Loading svelte-check in workspace: c:\_CA-CODE\cirque-app
+Getting Svelte diagnostics...
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\VoiceImport.svelte[39m:779:2
+[33mWarn[39m: Unused CSS selector ".entity-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m	}
+	[35m.entity-grid[36m {
+		display: grid;[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\VoiceImport.svelte[39m:872:3
+[33mWarn[39m: Unused CSS selector ".entity-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m		}
+		[35m.entity-grid[36m {
+			grid-template-columns: 1fr;[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\VoiceImport.svelte[39m:886:3
+[33mWarn[39m: Unused CSS selector ".entity-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m	@media (min-width: 641px) and (max-width: 1024px) {
+		[35m.entity-grid[36m {
+			grid-template-columns: repeat(2, 1fr);[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\clients\[id]\+page.svelte[39m:311:2
+[33mWarn[39m: Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events (svelte)
+[36m{#if showDeleteConfirm}
+	[35m<div class="modal-overlay" onclick={handleCancelDelete}>
+		<div class="modal-content" onclick={(e) => e.stopPropagation()}>
+			<div class="modal-header">
+				<Icon name="alert-triangle" size={48} extraClass="text-red-500" />
+				<h3 class="modal-title">Delete Client</h3>
+			</div>
+			<p class="modal-message">
+				Are you sure you want to delete <strong>{client?.name}</strong>? This action cannot be
+				undone.
+			</p>
+			<div class="modal-actions">
+				<Button variant="outline" onclick={handleCancelDelete}>
+					{#snippet children()}Cancel{/snippet}
+				</Button>
+				<Button color="red" onclick={handleConfirmDelete}>
+					{#snippet children()}Delete Client{/snippet}
+				</Button>
+			</div>
+		</div>
+	</div>[36m
+{/if}[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\clients\[id]\+page.svelte[39m:311:2
+[33mWarn[39m: `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions (svelte)
+[36m{#if showDeleteConfirm}
+	[35m<div class="modal-overlay" onclick={handleCancelDelete}>
+		<div class="modal-content" onclick={(e) => e.stopPropagation()}>
+			<div class="modal-header">
+				<Icon name="alert-triangle" size={48} extraClass="text-red-500" />
+				<h3 class="modal-title">Delete Client</h3>
+			</div>
+			<p class="modal-message">
+				Are you sure you want to delete <strong>{client?.name}</strong>? This action cannot be
+				undone.
+			</p>
+			<div class="modal-actions">
+				<Button variant="outline" onclick={handleCancelDelete}>
+					{#snippet children()}Cancel{/snippet}
+				</Button>
+				<Button color="red" onclick={handleConfirmDelete}>
+					{#snippet children()}Delete Client{/snippet}
+				</Button>
+			</div>
+		</div>
+	</div>[36m
+{/if}[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\clients\[id]\+page.svelte[39m:312:3
+[33mWarn[39m: Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events (svelte)
+[36m	<div class="modal-overlay" onclick={handleCancelDelete}>
+		[35m<div class="modal-content" onclick={(e) => e.stopPropagation()}>
+			<div class="modal-header">
+				<Icon name="alert-triangle" size={48} extraClass="text-red-500" />
+				<h3 class="modal-title">Delete Client</h3>
+			</div>
+			<p class="modal-message">
+				Are you sure you want to delete <strong>{client?.name}</strong>? This action cannot be
+				undone.
+			</p>
+			<div class="modal-actions">
+				<Button variant="outline" onclick={handleCancelDelete}>
+					{#snippet children()}Cancel{/snippet}
+				</Button>
+				<Button color="red" onclick={handleConfirmDelete}>
+					{#snippet children()}Delete Client{/snippet}
+				</Button>
+			</div>
+		</div>[36m
+	</div>[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\clients\[id]\+page.svelte[39m:312:3
+[33mWarn[39m: `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions (svelte)
+[36m	<div class="modal-overlay" onclick={handleCancelDelete}>
+		[35m<div class="modal-content" onclick={(e) => e.stopPropagation()}>
+			<div class="modal-header">
+				<Icon name="alert-triangle" size={48} extraClass="text-red-500" />
+				<h3 class="modal-title">Delete Client</h3>
+			</div>
+			<p class="modal-message">
+				Are you sure you want to delete <strong>{client?.name}</strong>? This action cannot be
+				undone.
+			</p>
+			<div class="modal-actions">
+				<Button variant="outline" onclick={handleCancelDelete}>
+					{#snippet children()}Cancel{/snippet}
+				</Button>
+				<Button color="red" onclick={handleConfirmDelete}>
+					{#snippet children()}Delete Client{/snippet}
+				</Button>
+			</div>
+		</div>[36m
+	</div>[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\events\sections\PerformersSection.svelte[39m:248:2
+[33mWarn[39m: Unused CSS selector ".table-header-cell.text-right"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	[35m.table-header-cell.text-right[36m { text-align: right; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\events\sections\PerformersSection.svelte[39m:258:2
+[33mWarn[39m: Unused CSS selector ".table-cell.text-right"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	[35m.table-cell.text-right[36m { text-align: right; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\performers\[id]\+page.svelte[39m:250:115
+[33mWarn[39m: Unused CSS selector ".details-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	.tab-title { font-size: 1.25rem; font-weight: 600; color: var(--color-gray-100); margin: 0; } /* Details Grid */ [35m.details-grid[36m { display: grid; gap: 1.5rem; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\performers\[id]\+page.svelte[39m:252:30
+[33mWarn[39m: Unused CSS selector ".details-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	@media (min-width: 768px) { [35m.details-grid[36m { grid-template-columns: 1fr 1fr; } } /* Info Card */ .info-card { padding: 1.5rem; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\performers\[id]\+page.svelte[39m:294:2
+[33mWarn[39m: Unused CSS selector ".metrics-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	[35m.metrics-grid[36m { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\performers\[id]\+page.svelte[39m:310:86
+[33mWarn[39m: Unused CSS selector ".skills-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	.actions-list { display: flex; flex-direction: column; gap: 0.75rem; } /* Skills */ [35m.skills-grid[36m { display: grid; gap: 1rem; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\performers\[id]\+page.svelte[39m:312:30
+[33mWarn[39m: Unused CSS selector ".skills-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	@media (min-width: 640px) { [35m.skills-grid[36m { grid-template-columns: repeat(2, 1fr); } }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\performers\[id]\+page.svelte[39m:314:31
+[33mWarn[39m: Unused CSS selector ".skills-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	@media (min-width: 1024px) { [35m.skills-grid[36m { grid-template-columns: repeat(3, 1fr); } }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\public\PublicNav.svelte[39m:38:29
+[33mWarn[39m: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+[36m			<!-- Logo -->
+			<a href="/" class="logo" [35mon:click={() => closeMenu()}[36m>
+				<div class="logo-icon">[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\public\PublicNav.svelte[39m:49:44
+[33mWarn[39m: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+[36m					<li>
+						<a href={item.href} class="nav-link" [35mon:click={() => handleNavClick(item.href)}[36m>
+							{item.label}[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\public\PublicNav.svelte[39m:68:5
+[33mWarn[39m: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+[36m				class="menu-toggle mobile-only"
+				[35mon:click={toggleMenu}[36m
+				aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\public\PublicNav.svelte[39m:86:51
+[33mWarn[39m: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+[36m					<li>
+						<a href={item.href} class="mobile-nav-link" [35mon:click={() => handleNavClick(item.href)}[36m>
+							{item.label}[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\public\PublicNav.svelte[39m:104:47
+[33mWarn[39m: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+[36m
+			<a href="/#booking" class="btn-primary-lg" [35mon:click={() => closeMenu()}[36m> Book Your Event </a>
+		</div>[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\public\sections\Hero.svelte[39m:52:3
+[33mWarn[39m: Self-closing HTML tags for non-void elements are ambiguous — use `<div ...></div>` rather than `<div ... />`
+https://svelte.dev/e/element_invalid_self_closing_tag (svelte)
+[36m	<div class="hero-background">
+		[35m<div class="hero-gradient" />[36m
+	</div>[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\public\sections\Services.svelte[39m:192:24
+[31mError[39m: `:global(...)` can be at the start or end of a selector sequence, but not in the middle
+https://svelte.dev/e/css_global_invalid_placement (svelte)
+[36m
+	.service-card-wrapper [35m:global(.card)[36m:hover .service-icon {
+		transform: scale(1.1) rotate(5deg);[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\public\sections\Services.svelte[39m:7:3
+[31mError[39m: Module '"@fortawesome/free-solid-svg-icons"' has no exported member 'faSparkles'. (ts)
+[36m		faUser,
+		[35mfaSparkles[36m,
+		faCircle,[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\lib\components\ui\Skeleton.svelte[39m:12:1
+[33mWarn[39m: Self-closing HTML tags for non-void elements are ambiguous — use `<div ...></div>` rather than `<div ... />`
+https://svelte.dev/e/element_invalid_self_closing_tag (svelte)
+[36m
+[35m<div class="skeleton {variant} {className}" style:width style:height data-component="Skeleton" />[36m[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\EventHeader.svelte[39m:18:258
+[31mError[39m: Cannot find name 'getStatusColor'. (ts)
+[36m
+<div class="event-header" data-component="EventHeader"> <div class="header-container"> <div class="header-content"> <!-- Event Title and Basic Info --> <div class="event-info"> <div class="title-row"> <h1 class="event-title">{event.name}</h1> <Badge color={[35mgetStatusColor[36m(event.status)}> {#snippet children()}{getStatusText(event.status)}{/snippet} </Badge> </div> <div class="meta-info"> <div class="meta-item"> <Icon name="calendar" size={16} extraClass="meta-icon" /> {format(event.date, 'EEEE, MMMM d, yyyy')} </div> <div class="meta-item"> <Icon name="clock" size={16} extraClass="meta-icon" /> Performance: {event.performanceTime.start} - {event.performanceTime.end} </div> <div class="meta-item"> <Icon name="users" size={16} extraClass="meta-icon" /> {event.performers?.length || 0} performer{(event.performers?.length || 0) !== 1 ? 's' : ''} </div> </div> </div> <!-- Action Buttons --> {#if canEdit} <div class="action-buttons"> <Button variant="outline" onclick={handleEdit}> {#snippet children()} <Icon name="edit" size={16} extraClass="mr-1" /> Edit Event {/snippet} </Button> <Button variant="outline" color="red" onclick={handleDelete}> {#snippet children()} <Icon name="trash-2" size={16} extraClass="mr-1" /> Delete {/snippet} </Button> <div class="actions-dropdown"> <Button> {#snippet children()} <Icon name="more-horizontal" size={16} /> Actions {/snippet} </Button> <div class="dropdown-menu"> <div class="dropdown-content"> {#if event.status !== 'confirmed'} <button class="dropdown-item" onclick={() => handleStatusChange('confirmed')} > Mark as Confirmed </button> {/if} {#if event.status !== 'deposit-received' && event.deposit.required && !event.deposit.received} <button class="dropdown-item" onclick={() => handleStatusChange('deposit-received')} > Mark Deposit Received </button> {/if} {#if event.status !== 'completed'} <button class="dropdown-item" onclick={() => handleStatusChange('completed')} > Mark as Completed </button> {/if} {#if event.status !== 'cancelled'} <button class="dropdown-item danger" onclick={() => handleStatusChange('cancelled')} > Mark as Cancelled </button> {/if} <a href={`/events/${event.id}/contract`} class="dropdown-item" > Generate Contract </a> </div> </div> </div> </div> {/if} </div> </div>
+</div> <style>[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\ClientInfoTab.svelte[39m:19:2
+[33mWarn[39m: Unused CSS selector ".info-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	[35m.info-grid[36m { display: grid; gap: 1.5rem; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\ClientInfoTab.svelte[39m:21:30
+[33mWarn[39m: Unused CSS selector ".info-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	@media (min-width: 768px) { [35m.info-grid[36m { grid-template-columns: repeat(2, 1fr); } }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\ContractTab.svelte[39m:9:2
+[33mWarn[39m: Unused CSS selector ".contract-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m<div class="contract-" data-component="ContractTab"> <!-- Contract Information --> <div class="info-card"> <div class="card-header"> <h2 class="card-title">Contract Status</h2> {#if canEdit} <Button href="/events/{event.id}/contract" variant="outline"> {#snippet children()} <Icon name="file-text" size={16} extraClass="mr-1" /> {event.contract.url ? 'View Contract' : 'Generate Contract'} {/snippet} </Button> {/if} </div> <div class="card-content"> <div class="status-row"> <span class="status-label">Contract Sent:</span> <span class="status-value" class:success={event.contract.sent} class:warning={!event.contract.sent}> {event.contract.sent ? 'Yes' : 'No'} </span> </div> {#if event.contract.sent && event.contract.sentDate} <div class="status-row"> <span class="status-label">Date Sent:</span> <span class="status-value">{format(event.contract.sentDate, 'MMM d, yyyy')}</span> </div> {/if} <div class="status-row"> <span class="status-label">Contract Received:</span> <span class="status-value" class:success={event.contract.received} class:warning={!event.contract.received}> {event.contract.received ? 'Yes' : 'No'} </span> </div> {#if event.contract.received && event.contract.receivedDate} <div class="status-row"> <span class="status-label">Date Received:</span> <span class="status-value">{format(event.contract.receivedDate, 'MMM d, yyyy')}</span> </div> {/if} {#if event.contract.url} <div class="contract-link-section"> <a href={event.contract.url} target="_blank" rel="noopener noreferrer" class="contract-link-button" > <Icon name="file-text" size={16} extraClass="mr-2" /> View Contract </a> </div> {/if} {#if canEdit} <div class="actions-section"> <h3 class="actions-title">Contract Actions</h3> {#if !event.contract.sent} <button class="action-button primary"> <Icon name="send" size={16} extraClass="mr-2" /> Mark Contract as Sent </button> {/if} {#if event.contract.sent && !event.contract.received} <button class="action-button success"> <Icon name="check" size={16} extraClass="mr-2" /> Mark Contract as Received </button> {/if} {#if !event.contract.url} <button class="action-button secondary"> <Icon name="upload" size={16} extraClass="mr-2" /> Upload Contract </button> {/if} </div> {/if} </div> </div> <!-- Payment Information --> <div class="info-card"> <div class="card-header"> <h2 class="card-title">Payment Details</h2> {#if canEdit} <Button href="/events/{event.id}/invoice" variant="outline"> {#snippet children()} <Icon name="dollar-sign" size={16} extraClass="mr-1" /> {event.payment.paid ? 'View Invoice' : 'Generate Invoice'} {/snippet} </Button> {/if} </div> <div class="card-content"> <div class="status-row"> <span class="status-label">Total Event Value:</span> <span class="status-value amount">${event.payment.totalValue.toFixed(2)}</span> </div> <div class="status-row"> <span class="status-label">Payment Status:</span> <span class="status-value" class:success={event.payment.paid} class:warning={!event.payment.paid}> {event.payment.paid ? 'Paid' : 'Unpaid'} </span> </div> {#if event.payment.paid && event.payment.paidDate} <div class="status-row"> <span class="status-label">Date Paid:</span> <span class="status-value">{format(event.payment.paidDate, 'MMM d, yyyy')}</span> </div> {/if} {#if event.payment.paid && event.payment.method} <div class="status-row"> <span class="status-label">Payment Method:</span> <span class="status-value method">{event.payment.method}</span> </div> {/if} {#if event.deposit.required} <div class="deposit-section"> <h3 class="deposit-title">Deposit Information</h3> <div class="status-row"> <span class="status-label">Deposit Amount:</span> <span class="status-value amount">${event.deposit.amount?.toFixed(2) || 'N/A'}</span> </div> <div class="status-row"> <span class="status-label">Deposit Status:</span> <span class="status-value" class:success={event.deposit.received} class:warning={!event.deposit.received}> {event.deposit.received ? 'Received' : 'Pending'} </span> </div> {#if event.deposit.received && event.deposit.receivedDate} <div class="status-row"> <span class="status-label">Date Received:</span> <span class="status-value">{format(event.deposit.receivedDate, 'MMM d, yyyy')}</span> </div> {/if} </div> {/if} {#if canEdit} <div class="actions-section"> <h3 class="actions-title">Payment Actions</h3> {#if !event.payment.paid} <button class="action-button success"> <Icon name="check-circle" size={16} extraClass="mr-2" /> Mark as Paid </button> <button class="action-button secondary"> <Icon name="mail" size={16} extraClass="mr-2" /> Send Payment Reminder </button> {/if} {#if event.deposit.required && !event.deposit.received} <button class="action-button primary"> <Icon name="check-circle" size={16} extraClass="mr-2" /> Mark Deposit as Received </button> {/if} </div> {/if} </div> </div> </div> <style>
+	[35m.contract-grid[36m { display: grid; gap: 1.5rem; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\ContractTab.svelte[39m:11:30
+[33mWarn[39m: Unused CSS selector ".contract-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	@media (min-width: 768px) { [35m.contract-grid[36m { grid-template-columns: repeat(2, 1fr); } }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\DetailsTab.svelte[39m:191:2
+[33mWarn[39m: Unused CSS selector ".details-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m<style>
+	[35m.details-grid[36m {
+		display: grid;[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\DetailsTab.svelte[39m:196:3
+[33mWarn[39m: Unused CSS selector ".details-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m	@media (min-width: 768px) {
+		[35m.details-grid[36m {
+			grid-template-columns: repeat(2, 1fr);[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\PerformersTab.svelte[39m:20:2
+[33mWarn[39m: Unused CSS selector ".performers-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	[35m.performers-grid[36m { display: grid; gap: 1rem; }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\PerformersTab.svelte[39m:22:30
+[33mWarn[39m: Unused CSS selector ".performers-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	@media (min-width: 640px) { [35m.performers-grid[36m { grid-template-columns: repeat(2, 1fr); } }[39m
+
+c:\_CA-CODE\cirque-app\[32msrc\routes\events\[id]\components\tabs\PerformersTab.svelte[39m:24:31
+[33mWarn[39m: Unused CSS selector ".performers-grid"
+https://svelte.dev/e/css_unused_selector (svelte)
+[36m
+	@media (min-width: 1024px) { [35m.performers-grid[36m { grid-template-columns: repeat(3, 1fr); } }[39m
+
+====================================
+[31msvelte-check found 3 errors and 31 warnings in 13 files
+[39m

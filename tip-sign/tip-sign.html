@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Sign for LED Dancers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* Designing for print on white paper. */
+            background-color: #f3f4f6; /* Light gray to see the white card */
+            margin: 0;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        .card-container {
+            /* US Letter paper size in landscape */
+            width: 11in;
+            height: 8.5in;
+            background-color: #ffffff;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-heading {
+            /* Black for maximum contrast from a distance */
+            color: #000000;
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Print styles for PDF export */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body {
+                background-color: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+            .card-container {
+                width: 100% !important;
+                height: 100vh !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: none !important;
+                max-height: none !important;
+            }
+            .print-button {
+                display: none !important;
+            }
+        }
+
+        @page {
+            size: 11in 8.5in;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <!-- Print to PDF Button -->
+    <button onclick="window.print()" class="print-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg">
+        Print to PDF
+    </button>
+
+    <!--
+      This container is optimized for visibility on a stage.
+      It's designed for standard letter-sized paper (11" x 8.5") landscape.
+    -->
+    <div class="card-container">
+        <div class="flex flex-col w-full h-full items-center justify-center text-center px-4 space-y-6">
+
+            <!-- Centered Text Content -->
+            <div>
+                <h1 class="font-playfair text-6xl font-bold main-heading leading-tight tracking-tight">
+                    Tips are appreciated,<br>not expected.
+                </h1>
+                <p class="font-poppins text-4xl font-bold text-gray-800 mt-4">
+                    Thank you!
+                </p>
+            </div>
+
+            <!-- Side-by-Side QR Codes -->
+            <div class="flex justify-center items-center space-x-12">
+                <!-- PayPal QR Code -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-white p-2 rounded-xl shadow-2xl">
+                        <img src="PayPal QR Code.png" alt="PayPal QR Code for Tips" class="w-72 h-auto rounded-lg">
+                    </div>
+                    <p class="text-2xl font-bold text-black mt-4 bg-white px-2 py-1 rounded-lg">PayPal</p>
+                </div>
+
+                <!-- Venmo QR Code -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-white p-2 rounded-xl shadow-2xl">
+                        <img src="Screenshot 2025-10-14 123325.png" alt="Venmo QR Code for Tips" class="w-72 h-auto rounded-lg">
+                    </div>
+                    <p class="text-2xl font-bold text-black mt-4 bg-white px-2 py-1 rounded-lg">Venmo</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>

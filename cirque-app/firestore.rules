@@ -1,0 +1,222 @@
+rules_version = '2';
+
+/**
+ * Firestore Security Rules for CircusSync
+ *
+ * IMPORTANT: Deploy these rules to Firebase Console
+ * Command: firebase deploy --only firestore:rules
+ */
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper Functions
+
+    // Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Get user role from users collection
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    // Check if user is admin
+    function isAdmin() {
+      return isAuthenticated() && getUserRole() == 'admin';
+    }
+
+    // Check if user can write (admin or user role)
+    function canWrite() {
+      return isAuthenticated() && (getUserRole() == 'admin' || getUserRole() == 'user');
+    }
+
+    // Check if user can read (any authenticated user)
+    function canRead() {
+      return isAuthenticated();
+    }
+
+    // Validate email format
+    function isValidEmail(email) {
+      return email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+    }
+
+    // ===================
+    // USER PROFILES
+    // ===================
+    match /users/{userId} {
+      // Users can read their own profile, admins can read all
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+
+      // Only admins can create new users or modify roles
+      allow create: if isAdmin();
+
+      // Users can update their own profile (except role), admins can update any
+      allow update: if isAuthenticated() && (
+        (request.auth.uid == userId &&
+         request.resource.data.role == resource.data.role) || // Can't change own role
+        isAdmin()
+      );
+
+      // Only admins can delete users
+      allow delete: if isAdmin();
+    }
+
+    // ===================
+    // CLIENTS
+    // ===================
+    match /clients/{clientId} {
+      // All authenticated users can read clients
+      allow read: if canRead();
+
+      // Only users and admins can create/update clients
+      allow create: if canWrite() &&
+                      request.resource.data.keys().hasAll(['name', 'email', 'status']) &&
+                      isValidEmail(request.resource.data.email);
+
+      allow update: if canWrite();
+
+      // Only admins can delete clients
+      allow delete: if isAdmin();
+    }
+
+    // ===================
+    // PERFORMERS
+    // ===================
+    match /performers/{performerId} {
+      // All authenticated users can read performers
+      allow read: if canRead();
+
+      // Only users and admins can create/update performers
+      allow create: if canWrite() &&
+                      request.resource.data.keys().hasAll(['name', 'email']) &&
+                      isValidEmail(request.resource.data.email);
+
+      allow update: if canWrite();
+
+      // Only admins can delete performers
+      allow delete: if isAdmin();
+    }
+
+    // ===================
+    // EVENTS
+    // ===================
+    match /events/{eventId} {
+      // All authenticated users can read events
+      allow read: if canRead();
+
+      // Only users and admins can create/update events
+      allow create: if canWrite() &&
+                      request.resource.data.keys().hasAll(['name', 'date', 'client']);
+
+      allow update: if canWrite();
+
+      // Only admins can delete events
+      allow delete: if isAdmin();
+    }
+
+    // ===================
+    // AGENTS
+    // ===================
+    match /agents/{agentId} {
+      // All authenticated users can read agents
+      allow read: if canRead();
+
+      // Only users and admins can create/update agents
+      allow create: if canWrite() &&
+                      request.resource.data.keys().hasAll(['name', 'email']) &&
+                      isValidEmail(request.resource.data.email);
+
+      allow update: if canWrite();
+
+      // Only admins can delete agents
+      allow delete: if isAdmin();
+    }
+
+    // ===================
+    // TASKS
+    // ===================
+    match /tasks/{taskId} {
+      // All authenticated users can read tasks
+      allow read: if canRead();
+
+      // Only users and admins can create/update tasks
+      allow create: if canWrite() &&
+                      request.resource.data.keys().hasAll(['title', 'completed', 'priority']);
+
+      allow update: if canWrite();
+
+      // Only admins can delete tasks
+      allow delete: if isAdmin();
+    }
+
+    // ===================
+    // CONTRACTS
+    // ===================
+    match /contracts/{contractId} {
+      // All authenticated users can read contracts
+      allow read: if canRead();
+
+      // Only users and admins can create/update contracts
+      allow create: if canWrite();
+      allow update: if canWrite();
+
+      // Only admins can delete contracts
+      allow delete: if isAdmin();
+    }
+
+    // ===================
+    // DOCUMENTS
+    // ===================
+    match /documents/{documentId} {
+      // All authenticated users can read documents
+      allow read: if canRead();
+
+      // Only users and admins can create/update documents
+      allow create: if canWrite();
+      allow update: if canWrite();
+
+      // Only admins can delete documents
+      allow delete: if isAdmin();
+    }
+
+    // ===================
+    // NOTIFICATIONS
+    // ===================
+    match /notifications/{notificationId} {
+      // Users can only read their own notifications
+      allow read: if isAuthenticated() &&
+                    resource.data.userId == request.auth.uid;
+
+      // System can create notifications (handled server-side)
+      // Users can mark their own notifications as read
+      allow update: if isAuthenticated() &&
+                      resource.data.userId == request.auth.uid &&
+                      request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
+
+      // Users can delete their own notifications
+      allow delete: if isAuthenticated() &&
+                      resource.data.userId == request.auth.uid;
+    }
+
+    // ===================
+    // AUDIT LOGS
+    // ===================
+    match /audit_logs/{logId} {
+      // Only admins can read audit logs
+      allow read: if isAdmin();
+
+      // No one can write directly (handled server-side)
+      allow write: if false;
+    }
+
+    // ===================
+    // DENY ALL OTHERS
+    // ===================
+    // Explicitly deny access to any other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

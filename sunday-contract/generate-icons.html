@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Generator - Cirque Aflame</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        .icon-container {
+            display: inline-block;
+            margin: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cirque Aflame Icon Generator</h1>
+    <p>Click the buttons below to download app icons</p>
+
+    <div class="icon-container">
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <br>
+        <button onclick="downloadIcon('icon192', 'icon-192.png')">Download 192x192</button>
+    </div>
+
+    <div class="icon-container">
+        <canvas id="icon512" width="512" height="512"></canvas>
+        <br>
+        <button onclick="downloadIcon('icon512', 'icon-512.png')">Download 512x512</button>
+    </div>
+
+    <script>
+        function drawIcon(canvas) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#3a0ca3');
+            gradient.addColorStop(1, '#f72585');
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+
+            // Draw circus tent/flame
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `${size * 0.6}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🎪', size / 2, size / 2);
+
+            // Add border
+            ctx.strokeStyle = '#4cc9f0';
+            ctx.lineWidth = size * 0.02;
+            ctx.strokeRect(ctx.lineWidth / 2, ctx.lineWidth / 2,
+                size - ctx.lineWidth, size - ctx.lineWidth);
+        }
+
+        function downloadIcon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const url = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = url;
+            link.click();
+        }
+
+        // Draw icons on load
+        window.onload = function() {
+            drawIcon(document.getElementById('icon192'));
+            drawIcon(document.getElementById('icon512'));
+        };
+    </script>
+</body>
+</html>

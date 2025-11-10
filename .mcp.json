@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx.cmd",
+      "args": ["@playwright/mcp@latest"],
+      "env": {}
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "env": {}
+    },
+    "tractatus-thinking": {
+      "command": "npx",
+      "args": ["-y", "tractatus_thinking@latest"],
+      "env": {}
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\Users\\auste\\Documents", "c:\\_CA-CODE"],
+      "env": {}
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {}
+    },
+    "everything": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-everything"],
+      "env": {}
+    }
+  }
+}

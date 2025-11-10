@@ -1,0 +1,4 @@
+packages:
+  - 'cirque-app'
+  - 'cirque-website'
+  - 'sunday-contract'

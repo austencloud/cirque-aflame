@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional contract generation for Cirque Aflame circus performances">
+    <meta name="theme-color" content="#3a0ca3">
+    <title>Cirque Aflame Contract Generator</title>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>🎪 Cirque Aflame Contract Generator</h1>
+                <p class="subtitle">Professional Performance Agreements</p>
+            </div>
+            <div class="header-actions">
+                <button id="loadDraftBtn" class="btn btn-secondary" title="Load saved draft">
+                    📂 Load Draft
+                </button>
+                <button id="saveDraftBtn" class="btn btn-secondary" title="Save current form">
+                    💾 Save Draft
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Form Section -->
+            <section class="form-section">
+                <h2>Contract Details</h2>
+                <form id="contractForm">
+                    <!-- Basic Info -->
+                    <div class="form-group">
+                        <h3>📅 Basic Information</h3>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="effectiveDate">Effective Date</label>
+                                <input type="date" id="effectiveDate" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="performanceDate">Performance Date</label>
+                                <input type="date" id="performanceDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="eventName">Event Name</label>
+                                <input type="text" id="eventName" placeholder="e.g., Halloween Festival Performance" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client Info -->
+                    <div class="form-group">
+                        <h3>👤 Client Information</h3>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="clientName">Client Name</label>
+                                <input type="text" id="clientName" placeholder="e.g., Maricruz Sauer" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="clientTitle">Title/Organization</label>
+                                <input type="text" id="clientTitle" placeholder="e.g., Event Coordinator" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="clientPhone">Phone</label>
+                                <input type="tel" id="clientPhone" placeholder="773-384-2672" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="clientEmail">Email</label>
+                                <input type="email" id="clientEmail" placeholder="client@example.com" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Details -->
+                    <div class="form-group">
+                        <h3>🎭 Performance Details</h3>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="performanceLocation">Location</label>
+                                <input type="text" id="performanceLocation" placeholder="e.g., Wicker Park, Chicago, IL" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="arrivalTime">Arrival Time</label>
+                                <input type="time" id="arrivalTime" value="12:45" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="startTime">Start Time</label>
+                                <input type="time" id="startTime" value="13:00" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="endTime">End Time</label>
+                                <input type="time" id="endTime" value="16:00" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="performersDescription">Performers & Description</label>
+                            <textarea id="performersDescription" rows="3" placeholder="e.g., Austen Cloud and co-performer" required></textarea>
+                        </div>
+                        <div class="form-field">
+                            <label for="performanceDetails">Performance Details</label>
+                            <textarea id="performanceDetails" rows="4" placeholder="Describe the performance (costumes, acts, etc.)" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Financial -->
+                    <div class="form-group">
+                        <h3>💰 Financial Terms</h3>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="totalFee">Total Fee (USD)</label>
+                                <input type="number" id="totalFee" min="0" step="0.01" placeholder="1200.00" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="paymentMethod">Payment Method</label>
+                                <select id="paymentMethod" required>
+                                    <option value="business check">Business Check</option>
+                                    <option value="cash">Cash</option>
+                                    <option value="Zelle">Zelle</option>
+                                    <option value="Venmo">Venmo</option>
+                                    <option value="bank transfer">Bank Transfer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="paymentTiming">Payment Due</label>
+                            <select id="paymentTiming" required>
+                                <option value="on the day of performance">Day of Performance</option>
+                                <option value="within 7 days of performance">Within 7 Days</option>
+                                <option value="within 30 days of performance">Within 30 Days</option>
+                                <option value="50% deposit, 50% on performance day">50% Deposit + 50% Day Of</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Producer Info -->
+                    <div class="form-group">
+                        <h3>🎪 Producer Information</h3>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="producerName">Producer Name</label>
+                                <input type="text" id="producerName" value="Cirque Aflame" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="showManager">Show Manager</label>
+                                <input type="text" id="showManager" value="Austen Cloud" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="producerPhone">Phone</label>
+                                <input type="tel" id="producerPhone" value="872-226-7692" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="producerEmail">Email</label>
+                                <input type="email" id="producerEmail" value="cirque.aflame@gmail.com" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="form-actions">
+                        <button type="button" id="previewBtn" class="btn btn-primary">
+                            👁️ Preview Contract
+                        </button>
+                        <button type="button" id="generatePdfBtn" class="btn btn-success">
+                            📄 Generate PDF
+                        </button>
+                        <button type="reset" class="btn btn-secondary">
+                            🔄 Reset Form
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section" id="previewSection">
+                <div class="preview-header">
+                    <h2>📋 Contract Preview</h2>
+                    <button id="closePreviewBtn" class="btn btn-sm">✕ Close</button>
+                </div>
+                <div id="contractPreview" class="contract-preview"></div>
+            </section>
+        </main>
+
+        <!-- Install Prompt -->
+        <div id="installPrompt" class="install-prompt" style="display: none;">
+            <div class="install-content">
+                <p>📱 Install this app for offline access!</p>
+                <button id="installBtn" class="btn btn-primary">Install</button>
+                <button id="dismissInstallBtn" class="btn btn-secondary">Not Now</button>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
