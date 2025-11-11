@@ -9,15 +9,15 @@ const path = require('path');
 const glob = require('glob');
 
 const filesToFix = [
-	'cirque-app/src/lib/components/events/sections/*.svelte',
-	'cirque-app/src/routes/events/+page.svelte',
-	'cirque-app/src/routes/performers/+page.svelte',
-	'cirque-app/src/lib/components/performers/+page.svelte',
-	'cirque-app/src/lib/components/clients/ClientsPage.svelte',
-	'cirque-app/src/lib/components/contracts/+page.svelte',
-	'cirque-app/src/lib/components/tasks/+page.svelte',
-	'cirque-app/src/routes/agents/new/+page.svelte',
-	'cirque-app/src/lib/components/agents/+page.svelte'
+	'ringmaster/src/lib/components/events/sections/*.svelte',
+	'ringmaster/src/routes/events/+page.svelte',
+	'ringmaster/src/routes/performers/+page.svelte',
+	'ringmaster/src/lib/components/performers/+page.svelte',
+	'ringmaster/src/lib/components/clients/ClientsPage.svelte',
+	'ringmaster/src/lib/components/contracts/+page.svelte',
+	'ringmaster/src/lib/components/tasks/+page.svelte',
+	'ringmaster/src/routes/agents/new/+page.svelte',
+	'ringmaster/src/lib/components/agents/+page.svelte'
 ];
 
 function fixFile(filePath) {

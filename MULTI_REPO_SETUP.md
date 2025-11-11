@@ -13,7 +13,7 @@ This monorepo serves as the **source of truth** and pushes to individual reposit
          │ git subtree push  │ git subtree push
          ↓                   ↓
 ┌────────────────┐   ┌──────────────────┐
-│  cirque-app    │   │ cirque-website   │  ← Mirror repos
+│  ringmaster    │   │ cirque-website   │  ← Mirror repos
 │  (individual)  │   │  (individual)    │  ← Read-only/deployment
 └────────────────┘   └──────────────────┘
 ```
@@ -32,7 +32,7 @@ This monorepo serves as the **source of truth** and pushes to individual reposit
 ### Step 1: Create Individual Repositories on GitHub
 
 Create two new empty repositories:
-1. `cirque-app` - For the main SaaS application
+1. `ringmaster` - For the main SaaS application
 2. `cirque-website` - For the marketing website
 
 **Important**:
@@ -46,7 +46,7 @@ Edit [scripts/push-to-repos.sh](scripts/push-to-repos.sh) and [scripts/setup-rem
 ```bash
 # Replace YOUR-USERNAME with your actual GitHub username
 declare -A PROJECTS=(
-    ["cirque-app"]="cirque-app:git@github.com:YOUR-USERNAME/cirque-app.git"
+    ["ringmaster"]="ringmaster:git@github.com:YOUR-USERNAME/ringmaster.git"
     ["cirque-website"]="cirque-website:git@github.com:YOUR-USERNAME/cirque-website.git"
 )
 ```
@@ -75,7 +75,7 @@ git commit -m "Prepare for multi-repo setup"
 ```
 
 This will push:
-- `cirque-app/` folder → `cirque-app` repository
+- `ringmaster/` folder → `ringmaster` repository
 - `cirque-website/` folder → `cirque-website` repository
 
 ## Daily Workflow
@@ -88,7 +88,7 @@ Work in the monorepo as usual:
 cd cirque-aflame-monorepo
 
 # Make changes to any project
-code cirque-app/src/routes/+page.svelte
+code ringmaster/src/routes/+page.svelte
 
 # Commit changes
 git add .
@@ -107,7 +107,7 @@ When ready to update individual repos:
 ./scripts/push-to-repos.sh
 
 # Or push just one project
-./scripts/push-to-repos.sh cirque-app
+./scripts/push-to-repos.sh ringmaster
 ./scripts/push-to-repos.sh cirque-website
 ```
 
@@ -123,20 +123,20 @@ We're using **git subtree** (not submodules) because:
 
 ### Cirque App (Main SaaS)
 
-The individual `cirque-app` repository can be deployed to:
+The individual `ringmaster` repository can be deployed to:
 - Vercel
 - Netlify
 - Firebase Hosting
 - Your own server
 
 **Deployment setup**:
-1. Connect the individual `cirque-app` repo to your deployment platform
+1. Connect the individual `ringmaster` repo to your deployment platform
 2. It will automatically build from the repo root
 3. No special configuration needed
 
 ### Cirque Website
 
-Same process as cirque-app:
+Same process as ringmaster:
 1. Connect `cirque-website` repo to deployment platform
 2. Auto-deploys on push
 
@@ -148,7 +148,7 @@ This usually means the individual repo has diverged. To fix:
 
 ```bash
 # Force push (be careful!)
-git subtree push --prefix=cirque-app cirque-app main --force
+git subtree push --prefix=ringmaster ringmaster main --force
 ```
 
 ### "Working tree has modifications"
@@ -185,7 +185,7 @@ npm init
 ```json
 {
   "workspaces": [
-    "cirque-app",
+    "ringmaster",
     "cirque-website",
     "new-project"
   ]
@@ -209,7 +209,7 @@ npm init
 If you need to pull changes made directly to individual repos:
 
 ```bash
-git subtree pull --prefix=cirque-app cirque-app main
+git subtree pull --prefix=ringmaster ringmaster main
 ```
 
 **Note**: This should be rare. The monorepo is meant to be the source of truth.

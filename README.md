@@ -13,13 +13,13 @@ This is a **npm workspaces + Turborepo** monorepo that serves as the **source of
 
 ## 📦 Projects
 
-### [`cirque-app`](./cirque-app)
+### [`ringmaster`](./ringmaster)
 **Ringmaster** - Main production management SaaS application
 
 - **Tech Stack**: SvelteKit + Svelte 5, TypeScript, Firebase
 - **Purpose**: Complete circus business management (clients, performers, events, contracts, agents)
-- **Includes**: Contract generation PWA at `cirque-app/contracts-pwa/`
-- **Individual Repo**: `cirque-app` (pushed via git subtree)
+- **Includes**: Contract generation PWA at `ringmaster/contracts-pwa/`
+- **Individual Repo**: `ringmaster` (pushed via git subtree)
 - **Status**: ⭐ Production-ready with comprehensive test coverage
 
 ### [`cirque-website`](./cirque-website)
@@ -71,7 +71,7 @@ When ready to deploy or sync to individual repos:
 ./scripts/push-to-repos.sh
 
 # Or push a specific project
-./scripts/push-to-repos.sh cirque-app
+./scripts/push-to-repos.sh ringmaster
 ./scripts/push-to-repos.sh cirque-website
 ```
 
@@ -88,7 +88,7 @@ See [MULTI_REPO_SETUP.md](MULTI_REPO_SETUP.md) for complete setup instructions.
 
 ```
 cirque-aflame-monorepo/
-├── cirque-app/               # Main SaaS application
+├── ringmaster/               # Main SaaS application
 │   └── contracts-pwa/        # Contract generation PWA (moved from sunday-contract)
 ├── cirque-website/           # Marketing website
 ├── scripts/
@@ -110,7 +110,7 @@ cirque-aflame-monorepo/
 
 Each project may require its own `.env` file. See individual project READMEs for details.
 
-- `cirque-app` requires Firebase configuration
+- `ringmaster` requires Firebase configuration
 - Other projects: See respective README files
 
 ## 📝 Contributing

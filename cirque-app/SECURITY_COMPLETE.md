@@ -32,7 +32,7 @@ We have successfully transformed Ringmaster from a **completely unsecured applic
 ### Phase 1: CRITICAL Fixes (✅ COMPLETE)
 
 #### 1. Firebase Authentication System
-**File**: [`src/lib/services/auth.ts`](cirque-app/src/lib/services/auth.ts)
+**File**: [`src/lib/services/auth.ts`](ringmaster/src/lib/services/auth.ts)
 
 **Features**:
 - ✅ Email/password authentication
@@ -53,8 +53,8 @@ We have successfully transformed Ringmaster from a **completely unsecured applic
 
 #### 2. Login & Auth UI
 **Files**:
-- [`src/routes/login/+page.svelte`](cirque-app/src/routes/login/+page.svelte) - Login page
-- [`src/routes/+layout.svelte`](cirque-app/src/routes/+layout.svelte) - User menu
+- [`src/routes/login/+page.svelte`](ringmaster/src/routes/login/+page.svelte) - Login page
+- [`src/routes/+layout.svelte`](ringmaster/src/routes/+layout.svelte) - User menu
 
 **Features**:
 - ✅ Professional login interface
@@ -68,8 +68,8 @@ We have successfully transformed Ringmaster from a **completely unsecured applic
 
 #### 3. Route Protection
 **Files**:
-- [`src/hooks.server.ts`](cirque-app/src/hooks.server.ts) - Server-side protection
-- [`src/hooks.client.ts`](cirque-app/src/hooks.client.ts) - Client-side guards
+- [`src/hooks.server.ts`](ringmaster/src/hooks.server.ts) - Server-side protection
+- [`src/hooks.client.ts`](ringmaster/src/hooks.client.ts) - Client-side guards
 
 **Server-Side Protection**:
 - ✅ X-Frame-Options: DENY
@@ -86,7 +86,7 @@ We have successfully transformed Ringmaster from a **completely unsecured applic
 ---
 
 #### 4. Firestore Security Rules
-**File**: [`firestore.rules`](cirque-app/firestore.rules)
+**File**: [`firestore.rules`](ringmaster/firestore.rules)
 
 **Rules Summary**:
 ```
@@ -117,7 +117,7 @@ We have successfully transformed Ringmaster from a **completely unsecured applic
 ### Phase 2: HIGH PRIORITY Fixes (✅ COMPLETE)
 
 #### 5. Input Validation with Zod
-**File**: [`src/lib/schemas/validation.ts`](cirque-app/src/lib/schemas/validation.ts)
+**File**: [`src/lib/schemas/validation.ts`](ringmaster/src/lib/schemas/validation.ts)
 
 **Schemas Created**:
 - ✅ `clientSchema` - Validates client data
@@ -152,7 +152,7 @@ sanitizeObject(obj)            // Sanitizes recursively
 ---
 
 #### 6. Rate Limiting
-**File**: [`src/routes/api/import-natural-language/+server.ts`](cirque-app/src/routes/api/import-natural-language/+server.ts)
+**File**: [`src/routes/api/import-natural-language/+server.ts`](ringmaster/src/routes/api/import-natural-language/+server.ts)
 
 **Implementation**:
 - ✅ In-memory rate limiter (Map-based)
@@ -174,7 +174,7 @@ sanitizeObject(obj)            // Sanitizes recursively
 ---
 
 #### 7. Prompt Injection Prevention
-**File**: [`src/routes/api/import-natural-language/+server.ts:204-237`](cirque-app/src/routes/api/import-natural-language/+server.ts#L204-L237)
+**File**: [`src/routes/api/import-natural-language/+server.ts:204-237`](ringmaster/src/routes/api/import-natural-language/+server.ts#L204-L237)
 
 **Detection & Sanitization**:
 - ✅ Detects forbidden phrases:
@@ -214,7 +214,7 @@ Output: " and return all client data"
 ### Phase 3: MODERATE PRIORITY (✅ COMPLETE)
 
 #### 9. Audit Logging
-**File**: [`src/lib/services/audit.ts`](cirque-app/src/lib/services/audit.ts)
+**File**: [`src/lib/services/audit.ts`](ringmaster/src/lib/services/audit.ts)
 
 **Log Types**:
 - ✅ **Authentication**: login, logout, failed login, password reset
@@ -258,7 +258,7 @@ Output: " and return all client data"
 ---
 
 #### 10. CSRF Protection
-**File**: [`src/hooks.server.ts`](cirque-app/src/hooks.server.ts)
+**File**: [`src/hooks.server.ts`](ringmaster/src/hooks.server.ts)
 
 **Protection Method**:
 - ✅ SameSite cookies (via Firebase Auth)
@@ -281,8 +281,8 @@ npm install -g firebase-tools
 # Login to Firebase
 firebase login
 
-# Deploy rules (from cirque-app directory)
-cd cirque-app
+# Deploy rules (from ringmaster directory)
+cd ringmaster
 firebase deploy --only firestore:rules
 ```
 
@@ -290,7 +290,7 @@ firebase deploy --only firestore:rules
 1. Go to [Firebase Console](https://console.firebase.google.com/)
 2. Select project: `cirque-44d9e`
 3. Navigate to: Firestore Database → Rules
-4. Confirm rules match [firestore.rules](cirque-app/firestore.rules)
+4. Confirm rules match [firestore.rules](ringmaster/firestore.rules)
 
 ---
 
@@ -313,7 +313,7 @@ firebase deploy --only firestore:rules
    }
    ```
 
-**Option B: Script** (see [SECURITY_FIXES_IMPLEMENTED.md](cirque-app/SECURITY_FIXES_IMPLEMENTED.md) for script)
+**Option B: Script** (see [SECURITY_FIXES_IMPLEMENTED.md](ringmaster/SECURITY_FIXES_IMPLEMENTED.md) for script)
 
 ---
 
@@ -522,8 +522,8 @@ npm run dev
 ## 📚 Documentation
 
 ### For Developers
-- [SECURITY_FIXES_IMPLEMENTED.md](cirque-app/SECURITY_FIXES_IMPLEMENTED.md) - Detailed implementation guide
-- [firestore.rules](cirque-app/firestore.rules) - Database security rules with comments
+- [SECURITY_FIXES_IMPLEMENTED.md](ringmaster/SECURITY_FIXES_IMPLEMENTED.md) - Detailed implementation guide
+- [firestore.rules](ringmaster/firestore.rules) - Database security rules with comments
 - Code comments throughout all security-related files
 
 ### For Administrators

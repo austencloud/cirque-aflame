@@ -135,18 +135,18 @@ For automated testing:
 
 ### Created:
 - `.vscode/launch.json` - F5 debug configurations
-- `cirque-app/start-dev.js` - Auto-restart script
-- `cirque-app/debug-app.js` - Playwright testing script (viewport updated to 1280x720)
+- `ringmaster/start-dev.js` - Auto-restart script
+- `ringmaster/debug-app.js` - Playwright testing script (viewport updated to 1280x720)
 
 ### Modified:
-- `cirque-app/package.json` - Added `start` script
-- `cirque-app/src/routes/+layout.svelte` - Fixed auth import
-- `cirque-app/src/hooks.client.ts` - Fixed auth import
-- `cirque-app/src/lib/components/dashboard/UpcomingEvents.svelte` - Reformatted
-- `cirque-app/src/lib/components/ui/Icon.svelte` - Fixed size prop type
-- `cirque-app/src/routes/+page.svelte` - Reformatted
-- `cirque-app/src/lib/components/ui/SettingsModal.svelte` - Reformatted
-- `cirque-app/src/lib/components/VoiceImport.svelte` - Reformatted
+- `ringmaster/package.json` - Added `start` script
+- `ringmaster/src/routes/+layout.svelte` - Fixed auth import
+- `ringmaster/src/hooks.client.ts` - Fixed auth import
+- `ringmaster/src/lib/components/dashboard/UpcomingEvents.svelte` - Reformatted
+- `ringmaster/src/lib/components/ui/Icon.svelte` - Fixed size prop type
+- `ringmaster/src/routes/+page.svelte` - Reformatted
+- `ringmaster/src/lib/components/ui/SettingsModal.svelte` - Reformatted
+- `ringmaster/src/lib/components/VoiceImport.svelte` - Reformatted
 
 ## Pattern Discovered
 

@@ -33,7 +33,7 @@ VITE_FIREBASE_APP_ID=
 ## Project Architecture
 
 ```text
-Ringmaster (cirque-app)/
+Ringmaster (ringmaster)/
 ├── src/
 │   ├── routes/                    # SvelteKit file-based routing
 │   │   ├── +layout.svelte        # Root layout with navigation

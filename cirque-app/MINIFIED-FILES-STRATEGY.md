@@ -35,7 +35,7 @@ Your codebase has **64 Svelte component files** that are minified/compressed wit
 
 Run this command to see the complete list:
 ```bash
-cd cirque-app/src
+cd ringmaster/src
 find . -name "*.svelte" -exec sh -c 'lines=$(wc -l < "$1"); if [ "$lines" -lt 10 ]; then echo "$1: $lines lines"; fi' _ {} \;
 ```
 

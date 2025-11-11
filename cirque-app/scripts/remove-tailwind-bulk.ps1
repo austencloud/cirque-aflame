@@ -3,7 +3,7 @@
 Write-Host "🔧 Bulk Tailwind Removal Script" -ForegroundColor Cyan
 Write-Host "==============================`n" -ForegroundColor Cyan
 
-$rootPath = "F:\_CIRQUE AFLAME\_CODE\cirque-app\src"
+$rootPath = "F:\_CIRQUE AFLAME\_CODE\ringmaster\src"
 $filesProcessed = 0
 $classesRemoved = 0
 

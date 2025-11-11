@@ -50,13 +50,13 @@ Successfully upgraded the Cirque Aflame monorepo from a basic multi-project setu
 - Difficult to debug production issues
 
 **After:**
-- ✅ **Pino logger** configured ([cirque-app/src/lib/server/logger.ts](./cirque-app/src/lib/server/logger.ts))
+- ✅ **Pino logger** configured ([ringmaster/src/lib/server/logger.ts](./ringmaster/src/lib/server/logger.ts))
 - ✅ 5-10x faster than Winston
 - ✅ Structured JSON logging for production
 - ✅ Pretty-printed logs for development
 - ✅ Automatic sensitive data redaction
 - ✅ Child loggers for contextual logging
-- ✅ Comprehensive migration guide ([cirque-app/LOGGING_MIGRATION.md](./cirque-app/LOGGING_MIGRATION.md))
+- ✅ Comprehensive migration guide ([ringmaster/LOGGING_MIGRATION.md](./ringmaster/LOGGING_MIGRATION.md))
 
 **Key Features:**
 - Server-only module (lives in `lib/server/`)
@@ -76,11 +76,11 @@ Successfully upgraded the Cirque Aflame monorepo from a basic multi-project setu
 - ✅ Prevents new strict mode violations
 - ✅ Allows gradual fixing of existing issues
 - ✅ CI-ready regression prevention
-- ✅ Detailed migration guide ([cirque-app/STRICT_MODE_MIGRATION.md](./cirque-app/STRICT_MODE_MIGRATION.md))
+- ✅ Detailed migration guide ([ringmaster/STRICT_MODE_MIGRATION.md](./ringmaster/STRICT_MODE_MIGRATION.md))
 
 **Files Created:**
-- [`.betterer.ts`](./cirque-app/.betterer.ts) - Betterer configuration
-- [`tsconfig.strict.json`](./cirque-app/tsconfig.strict.json) - Strict TypeScript config
+- [`.betterer.ts`](./ringmaster/.betterer.ts) - Betterer configuration
+- [`tsconfig.strict.json`](./ringmaster/tsconfig.strict.json) - Strict TypeScript config
 
 **New npm scripts:**
 ```bash
@@ -94,7 +94,7 @@ npm run check:strict    # See all current strict mode errors
 
 **Before:**
 - Multiple `nul` files (Windows command artifacts)
-- Debug files in cirque-app root
+- Debug files in ringmaster root
 - Untracked tip-sign directory
 
 **After:**
@@ -125,7 +125,7 @@ pnpm test
 pnpm format
 
 # Work with specific projects
-pnpm --filter cirque-app dev
+pnpm --filter ringmaster dev
 pnpm --filter cirque-website build
 ```
 
@@ -170,7 +170,7 @@ npm run better:update # Update baseline
 - `turbo@^2.5.7` - Build orchestration
 - `prettier@^3.6.2` - Code formatting
 
-### cirque-app
+### ringmaster
 - `pino@^9.6.0` - High-performance logger
 - `pino-pretty@^13.0.0` - Development log formatter
 - `@betterer/cli@^6.1.2` - Incremental improvement tool
@@ -186,8 +186,8 @@ npm run better:update # Update baseline
 | [`cirque-website/README.md`](./cirque-website/README.md) | Website project documentation |
 | [`sunday-contract/README.md`](./sunday-contract/README.md) | Contract generator docs |
 | [`tip-sign/README.md`](./tip-sign/README.md) | Tip sign usage guide |
-| [`cirque-app/LOGGING_MIGRATION.md`](./cirque-app/LOGGING_MIGRATION.md) | Pino logging migration guide |
-| [`cirque-app/STRICT_MODE_MIGRATION.md`](./cirque-app/STRICT_MODE_MIGRATION.md) | TypeScript strict mode guide |
+| [`ringmaster/LOGGING_MIGRATION.md`](./ringmaster/LOGGING_MIGRATION.md) | Pino logging migration guide |
+| [`ringmaster/STRICT_MODE_MIGRATION.md`](./ringmaster/STRICT_MODE_MIGRATION.md) | TypeScript strict mode guide |
 | [`UPGRADE_SUMMARY_2025.md`](./UPGRADE_SUMMARY_2025.md) | This document |
 
 ---
@@ -208,7 +208,7 @@ npm run better:update # Update baseline
 
 3. **Initialize Betterer baseline**
    ```bash
-   cd cirque-app
+   cd ringmaster
    npm run better:update  # Creates initial baseline
    ```
 
@@ -222,7 +222,7 @@ npm run better:update # Update baseline
 5. **Start logging migration**
    - Begin with API routes (`src/routes/api/`)
    - Replace console.* with logger calls
-   - Follow [LOGGING_MIGRATION.md](./cirque-app/LOGGING_MIGRATION.md)
+   - Follow [LOGGING_MIGRATION.md](./ringmaster/LOGGING_MIGRATION.md)
 
 6. **Fix strict mode errors incrementally**
    - Pick a module to improve
@@ -300,7 +300,7 @@ Now that the monorepo is modernized, follow these workflows:
 1. Install dependencies: `pnpm install`
 2. Start dev servers: `pnpm dev`
 3. Make changes to any project
-4. Check for regressions: `cd cirque-app && npm run better`
+4. Check for regressions: `cd ringmaster && npm run better`
 5. Format code: `pnpm format`
 6. Commit changes
 

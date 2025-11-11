@@ -2,7 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(powershell -Command \"Get-ChildItem -Path src -Recurse -Include *.svelte,*.ts | ForEach-Object { (Get-Content $_.FullName) -replace \"\"from ''\\$lib/state/(\\w+)''\"\", \"\"from ''$lib/state/$1.svelte.ts''\"\" -replace ''from \"\"\\$lib/state/(\\w+)\"\"'', ''from \"\"$lib/state/$1.svelte.ts\"\"'' | Set-Content $_.FullName }\")",
-      "Bash(bash \"F:\\_CIRQUE AFLAME\\_CODE\\cirque-app\\fix-imports.sh\")",
+      "Bash(bash \"F:\\_CIRQUE AFLAME\\_CODE\\ringmaster\\fix-imports.sh\")",
       "Bash(npx playwright:*)",
       "Bash(npm run seed:*)",
       "Bash(powershell -Command:*)",

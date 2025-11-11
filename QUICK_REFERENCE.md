@@ -4,7 +4,7 @@
 
 ```bash
 # 1. Create individual repos on GitHub (empty, no README)
-#    - cirque-app
+#    - ringmaster
 #    - cirque-website
 
 # 2. Update URLs in scripts/push-to-repos.sh
@@ -42,7 +42,7 @@ git push origin main
 ./scripts/push-to-repos.sh
 
 # Push single project
-./scripts/push-to-repos.sh cirque-app
+./scripts/push-to-repos.sh ringmaster
 ./scripts/push-to-repos.sh cirque-website
 
 # Check remotes
@@ -50,11 +50,11 @@ git remote -v
 
 # Run dev servers
 npm run dev                           # All projects
-npm run dev --workspace=cirque-app    # Just cirque-app
+npm run dev --workspace=ringmaster    # Just ringmaster
 
 # Build
 npm run build                         # All projects
-npm run build --workspace=cirque-app  # Just cirque-app
+npm run build --workspace=ringmaster  # Just ringmaster
 ```
 
 ## Troubleshooting
@@ -67,7 +67,7 @@ git add . && git commit -m "Save work"
 ./scripts/setup-remotes.sh
 
 # Force push (careful!)
-git subtree push --prefix=cirque-app cirque-app main --force
+git subtree push --prefix=ringmaster ringmaster main --force
 ```
 
 ## File Locations
@@ -75,4 +75,4 @@ git subtree push --prefix=cirque-app cirque-app main --force
 - Main setup guide: [MULTI_REPO_SETUP.md](MULTI_REPO_SETUP.md)
 - Push script: [scripts/push-to-repos.sh](scripts/push-to-repos.sh)
 - Remote setup: [scripts/setup-remotes.sh](scripts/setup-remotes.sh)
-- Contract PWA: [cirque-app/contracts-pwa/](cirque-app/contracts-pwa/)
+- Contract PWA: [ringmaster/contracts-pwa/](ringmaster/contracts-pwa/)

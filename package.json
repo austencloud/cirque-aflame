@@ -4,7 +4,7 @@
   "private": true,
   "description": "Cirque Aflame monorepo - circus production company management platform",
   "workspaces": [
-    "cirque-app",
+    "ringmaster",
     "cirque-website"
   ],
   "scripts": {

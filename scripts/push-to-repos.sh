@@ -8,7 +8,7 @@
 #
 # Examples:
 #   ./scripts/push-to-repos.sh              # Push all projects
-#   ./scripts/push-to-repos.sh cirque-app   # Push only cirque-app
+#   ./scripts/push-to-repos.sh ringmaster   # Push only ringmaster
 #   ./scripts/push-to-repos.sh cirque-website
 
 set -e  # Exit on error
@@ -22,8 +22,8 @@ NC='\033[0m' # No Color
 # Project configurations
 # Format: "project-folder:remote-name:remote-url"
 declare -A PROJECTS=(
-    ["cirque-app"]="cirque-app:https://github.com/austencloud/ringmaster.git"
-    ["cirque-website"]="cirque-website:https://github.com/austencloud/cirque-website.git"
+    ["ringmaster"]="ringmaster:https://github.com/austencloud/ringmaster.git"
+    ["cirque-website"]="cirque-website:https://github.com/austencloud/cirque-aflame-web.git"
 )
 
 # Function to push a single project

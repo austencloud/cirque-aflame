@@ -2,7 +2,7 @@
 
 # Fix all imports to add .svelte.ts extension
 
-cd "F:\_CIRQUE AFLAME\_CODE\cirque-app"
+cd "F:\_CIRQUE AFLAME\_CODE\ringmaster"
 
 # Find all .svelte and .ts files and fix imports
 find src -type f \( -name "*.svelte" -o -name "*.ts" \) | while read file; do
