@@ -1,6 +1,6 @@
-# CircusSync E2E Tests with Playwright
+# Ringmaster E2E Tests with Playwright
 
-Comprehensive end-to-end test suite for CircusSync application, ensuring all functionality works correctly after the Svelte 5 migration.
+Comprehensive end-to-end test suite for Ringmaster application, ensuring all functionality works correctly after the Svelte 5 migration.
 
 ## 🧪 Test Coverage
 

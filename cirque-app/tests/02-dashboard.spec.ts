@@ -5,7 +5,7 @@ test.describe('Dashboard', () => {
 		await page.goto('/');
 
 		// Wait for loading to complete
-		await page.waitForSelector('h1:has-text("Welcome to CircusSync")', { timeout: 10000 });
+		await page.waitForSelector('h1:has-text("Welcome to Ringmaster")', { timeout: 10000 });
 
 		// Check for dashboard metric cards using more specific selectors
 		await expect(page.getByRole('heading', { name: /Upcoming Events/i }).first()).toBeVisible();
@@ -99,7 +99,7 @@ test.describe('Dashboard', () => {
 
 		// Check for loading spinner or immediate content
 		// Either loading spinner should appear and then disappear, or content loads immediately
-		const hasContent = await page.locator('h1:has-text("Welcome to CircusSync")').isVisible();
+		const hasContent = await page.locator('h1:has-text("Welcome to Ringmaster")').isVisible();
 		expect(hasContent).toBeTruthy();
 	});
 });

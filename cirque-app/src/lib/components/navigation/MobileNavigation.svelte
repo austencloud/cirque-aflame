@@ -121,7 +121,7 @@
     <div class="panel-header">
       <div class="header-brand">
         <span class="brand-badge">CS</span>
-        <span class="brand-name">CircusSync</span>
+        <span class="brand-name">Ringmaster</span>
       </div>
       <button
         class="close-button"

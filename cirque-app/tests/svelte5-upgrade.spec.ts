@@ -5,7 +5,7 @@ test.describe('Svelte 5 Upgrade Tests', () => {
 		await page.goto('http://localhost:3000');
 
 		// Check that the page title is visible
-		await expect(page.locator('h1')).toContainText('Welcome to CircusSync');
+		await expect(page.locator('h1')).toContainText('Welcome to Ringmaster');
 
 		// Check for loading spinner or content
 		await page.waitForTimeout(2000);
@@ -192,6 +192,6 @@ test.describe('Svelte 5 Upgrade Tests', () => {
 		await page.waitForTimeout(1000);
 
 		// Verify dashboard is still functional
-		await expect(page.locator('h1')).toContainText('Welcome to CircusSync');
+		await expect(page.locator('h1')).toContainText('Welcome to Ringmaster');
 	});
 });

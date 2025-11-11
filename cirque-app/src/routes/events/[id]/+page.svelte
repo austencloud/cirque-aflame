@@ -124,7 +124,7 @@
 </script>
 
 <svelte:head>
-	<title>{isNewEvent ? 'New Event' : (event?.name || 'Event Details')} | CircusSync</title>
+	<title>{isNewEvent ? 'New Event' : (event?.name || 'Event Details')} | Ringmaster</title>
 </svelte:head>
 
 <div data-page="event-detail">

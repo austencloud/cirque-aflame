@@ -209,7 +209,7 @@
 </script>
 
 <svelte:head>
-	<title>{performer?.name || 'Performer Details'} | CircusSync</title>
+	<title>{performer?.name || 'Performer Details'} | Ringmaster</title>
 </svelte:head>
 
 {#if loading}

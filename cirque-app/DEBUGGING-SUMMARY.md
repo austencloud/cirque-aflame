@@ -1,11 +1,11 @@
-# CircusSync Debugging Summary
+# Ringmaster Debugging Summary
 
 ## F5 Launch Configuration Created ✅
 
 Created `.vscode/launch.json` with multiple debug configurations:
 
-1. **Launch CircusSync Dev Server** - Automatically kills processes on port 3000 and starts fresh dev server
-2. **Debug CircusSync with Playwright** - Runs automated browser testing with error detection
+1. **Launch Ringmaster Dev Server** - Automatically kills processes on port 3000 and starts fresh dev server
+2. **Debug Ringmaster with Playwright** - Runs automated browser testing with error detection
 3. **Launch Chrome against localhost:3000** - Direct Chrome debugging
 4. **Full Stack Debug** - Compound configuration that starts both server and Chrome
 
@@ -24,7 +24,7 @@ Created `start-dev.js` which:
 npm run start
 ```
 
-Or just press F5 with "Launch CircusSync Dev Server" selected!
+Or just press F5 with "Launch Ringmaster Dev Server" selected!
 
 ## Errors Fixed (7 Major Issues)
 
@@ -83,7 +83,7 @@ Created `debug-app.js` with:
 node debug-app.js
 ```
 
-Or press F5 with "Debug CircusSync with Playwright" selected!
+Or press F5 with "Debug Ringmaster with Playwright" selected!
 
 ## Additional Fixes (Session 2)
 
@@ -121,7 +121,7 @@ The app now loads successfully with ZERO console errors! 🎉
 ## How to Test
 
 1. Press **F5** in VS Code
-2. Select "Launch CircusSync Dev Server"
+2. Select "Launch Ringmaster Dev Server"
 3. Wait for server to start (auto-kills any existing process on port 3000)
 4. Navigate to http://localhost:3000 in your browser
 5. Dashboard should load with no console errors!

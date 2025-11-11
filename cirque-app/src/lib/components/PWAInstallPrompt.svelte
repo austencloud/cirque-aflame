@@ -74,7 +74,7 @@
 				<div class="flex items-center gap-3">
 					<div class="text-4xl">🎪</div>
 					<div>
-						<h3 class="font-bold text-lg text-gray-900 dark:text-white">Install CircusSync</h3>
+						<h3 class="font-bold text-lg text-gray-900 dark:text-white">Install Ringmaster</h3>
 						<p class="text-sm text-gray-600 dark:text-gray-300">Quick access from your home screen</p>
 					</div>
 				</div>

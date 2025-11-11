@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CircusSync PWA Icon Generator</title>
+    <title>Ringmaster PWA Icon Generator</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -80,7 +80,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎪 CircusSync PWA Icon Generator</h1>
+        <h1>🎪 Ringmaster PWA Icon Generator</h1>
 
         <div class="icons-grid">
             <div class="icon-item">
@@ -175,13 +175,13 @@
             ctx.textBaseline = 'middle';
             ctx.fillText('🎪', centerX, centerY);
 
-            // Add "CS" text for CircusSync
+            // Add "CS" text for Ringmaster
             if (!isMaskable || size > 300) {
                 ctx.fillStyle = '#ffffff';
                 ctx.font = `bold ${iconSize * 0.15}px -apple-system, sans-serif`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'top';
-                ctx.fillText('CircusSync', centerX, iconSize * 0.8);
+                ctx.fillText('Ringmaster', centerX, iconSize * 0.8);
             }
 
             ctx.restore();

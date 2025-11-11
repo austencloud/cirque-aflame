@@ -93,7 +93,7 @@
 </script>
 
 <svelte:head>
-	<title>Performers | CircusSync</title>
+	<title>Performers | Ringmaster</title>
 </svelte:head>
 
 <div class="page-container" data-page="performers-list">

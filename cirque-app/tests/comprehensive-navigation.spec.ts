@@ -13,7 +13,7 @@ test.describe('Comprehensive Navigation Tests', () => {
 	});
 
 	test('Dashboard page loads without errors', async ({ page }) => {
-		await expect(page.locator('h1')).toContainText('Welcome to CircusSync');
+		await expect(page.locator('h1')).toContainText('Welcome to Ringmaster');
 
 		// Check for no 404 or error messages
 		await expect(page.locator('text=404')).not.toBeVisible();
@@ -103,7 +103,7 @@ test.describe('Comprehensive Navigation Tests', () => {
 
 	test('All navigation links are highlighted correctly', async ({ page }) => {
 		const navTests = [
-			{ href: '/', expectedText: 'Welcome to CircusSync' },
+			{ href: '/', expectedText: 'Welcome to Ringmaster' },
 			{ href: '/events', expectedText: 'Events' },
 			{ href: '/clients', expectedText: 'Clients' },
 			{ href: '/performers', expectedText: 'Performers' },
@@ -134,13 +134,13 @@ test.describe('Comprehensive Navigation Tests', () => {
 
 	test('All pages have proper page titles', async ({ page }) => {
 		const pages = [
-			{ url: '/', title: /CircusSync/ },
-			{ url: '/events', title: /CircusSync/ },
-			{ url: '/clients', title: /CircusSync/ },
-			{ url: '/performers', title: /CircusSync/ },
-			{ url: '/agents', title: /CircusSync/ },
-			{ url: '/contracts', title: /CircusSync/ },
-			{ url: '/tasks', title: /CircusSync/ }
+			{ url: '/', title: /Ringmaster/ },
+			{ url: '/events', title: /Ringmaster/ },
+			{ url: '/clients', title: /Ringmaster/ },
+			{ url: '/performers', title: /Ringmaster/ },
+			{ url: '/agents', title: /Ringmaster/ },
+			{ url: '/contracts', title: /Ringmaster/ },
+			{ url: '/tasks', title: /Ringmaster/ }
 		];
 
 		for (const pageTest of pages) {
@@ -202,7 +202,7 @@ test.describe('Comprehensive Navigation Tests', () => {
 
 	test('Back navigation works correctly', async ({ page }) => {
 		// Start at dashboard
-		await expect(page.locator('h1')).toContainText('Welcome to CircusSync');
+		await expect(page.locator('h1')).toContainText('Welcome to Ringmaster');
 
 		// Navigate to events
 		await page.click('a[href="/events"]');
@@ -222,7 +222,7 @@ test.describe('Comprehensive Navigation Tests', () => {
 		// Go back again
 		await page.goBack();
 		await page.waitForURL('**/');
-		await expect(page.locator('h1')).toContainText('Welcome to CircusSync');
+		await expect(page.locator('h1')).toContainText('Welcome to Ringmaster');
 	});
 
 	test('Forward navigation works correctly', async ({ page }) => {

@@ -14,7 +14,7 @@ This is a **npm workspaces + Turborepo** monorepo that serves as the **source of
 ## 📦 Projects
 
 ### [`cirque-app`](./cirque-app)
-**CircusSync** - Main production management SaaS application
+**Ringmaster** - Main production management SaaS application
 
 - **Tech Stack**: SvelteKit + Svelte 5, TypeScript, Firebase
 - **Purpose**: Complete circus business management (clients, performers, events, contracts, agents)

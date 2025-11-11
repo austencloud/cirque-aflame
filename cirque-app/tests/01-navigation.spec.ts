@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test';
 test.describe('Navigation', () => {
 	test('should navigate to homepage', async ({ page }) => {
 		await page.goto('/');
-		await expect(page).toHaveTitle(/CircusSync/);
-		await expect(page.locator('h1')).toContainText('Welcome to CircusSync');
+		await expect(page).toHaveTitle(/Ringmaster/);
+		await expect(page.locator('h1')).toContainText('Welcome to Ringmaster');
 	});
 
 	test('should have working navigation menu', async ({ page }) => {
@@ -54,7 +54,7 @@ test.describe('Navigation', () => {
 			.first()
 			.click();
 		await expect(page).toHaveURL('/');
-		await expect(page.locator('h1')).toContainText('Welcome to CircusSync');
+		await expect(page.locator('h1')).toContainText('Welcome to Ringmaster');
 	});
 
 	test('should highlight active navigation item', async ({ page }) => {

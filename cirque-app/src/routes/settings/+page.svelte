@@ -7,7 +7,7 @@
 	<div class="settings-container">
 		<div class="settings-header">
 			<h1 class="settings-title">Settings</h1>
-			<p class="settings-description">Manage your CircusSync preferences and configuration</p>
+			<p class="settings-description">Manage your Ringmaster preferences and configuration</p>
 		</div>
 
 		<div class="settings-content">
@@ -17,7 +17,7 @@
 				</div>
 				<h3 class="placeholder-title">Settings Coming Soon</h3>
 				<p class="placeholder-description">
-					We're working on adding customization options to make CircusSync work even better for
+					We're working on adding customization options to make Ringmaster work even better for
 					you. Check back soon for theme preferences, notification settings, and more.
 				</p>
 			</div>

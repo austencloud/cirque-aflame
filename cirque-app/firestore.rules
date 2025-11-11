@@ -1,7 +1,7 @@
 rules_version = '2';
 
 /**
- * Firestore Security Rules for CircusSync
+ * Firestore Security Rules for Ringmaster
  *
  * IMPORTANT: Deploy these rules to Firebase Console
  * Command: firebase deploy --only firestore:rules

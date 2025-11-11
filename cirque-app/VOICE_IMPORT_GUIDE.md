@@ -1,6 +1,6 @@
 # 🎤 Voice-Powered Data Import
 
-Your CircusSync dashboard now has an **AI-powered voice import feature**! Just speak naturally about your clients, performers, and events, and watch them automatically get added to your database.
+Your Ringmaster dashboard now has an **AI-powered voice import feature**! Just speak naturally about your clients, performers, and events, and watch them automatically get added to your database.
 
 ## 🎯 How It Works
 

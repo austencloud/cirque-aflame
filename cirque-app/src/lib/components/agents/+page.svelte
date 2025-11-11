@@ -53,7 +53,7 @@
 </script>
 
 <svelte:head>
-	<title>Agents | CircusSync</title>
+	<title>Agents | Ringmaster</title>
 </svelte:head>
 
 <div class="page-container" data-page="agents-list">

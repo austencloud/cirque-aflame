@@ -195,15 +195,15 @@
 </script>
 
 <svelte:head>
-	<title>CircusSync - Production Company Management</title>
-	<meta name="description" content="Manage your entertainment production company with CircusSync" />
+	<title>Ringmaster - Production Company Management</title>
+	<meta name="description" content="Manage your entertainment production company with Ringmaster" />
 
 	<!-- PWA Meta Tags -->
 	<meta name="theme-color" content="#8B5CF6" />
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	<meta name="apple-mobile-web-app-title" content="CircusSync" />
+	<meta name="apple-mobile-web-app-title" content="Ringmaster" />
 
 	<!-- Icons -->
 	<link rel="icon" href="/favicon.png" />
@@ -232,7 +232,7 @@
 
 						<a href="/" class="logo-link">
 							<span class="logo-badge">CS</span>
-							<span class="logo-text">CircusSync</span>
+							<span class="logo-text">Ringmaster</span>
 						</a>
 					</div>
 
@@ -324,7 +324,7 @@
 	</main>
 
 	<footer class="app-footer">
-		© {new Date().getFullYear()} CircusSync. All rights reserved.
+		© {new Date().getFullYear()} Ringmaster. All rights reserved.
 	</footer>
 </div>
 

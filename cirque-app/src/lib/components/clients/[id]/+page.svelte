@@ -90,7 +90,7 @@
 </script>
 
 <svelte:head>
-	<title>{client?.name || 'Client'} | CircusSync</title>
+	<title>{client?.name || 'Client'} | Ringmaster</title>
 </svelte:head>
 
 <div class="page-container" data-page="client-detail">

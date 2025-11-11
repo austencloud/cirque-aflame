@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>New Event | CircusSync</title>
+	<title>New Event | Ringmaster</title>
 </svelte:head>
 
 <div class="page-container">

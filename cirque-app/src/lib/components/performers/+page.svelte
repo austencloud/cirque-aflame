@@ -200,7 +200,7 @@
 </script>
 
 <svelte:head>
-	<title>Performers | CircusSync</title>
+	<title>Performers | Ringmaster</title>
 </svelte:head>
 
 <div class="bg-white"> <div class="sm: lg:"> <div class="-col md:"> <h1 >Performers</h1> <div class="md: -col"> <!-- Filter button (mobile) --> <button type="button" class="sm: - bg-white hover:" onclick={toggleFilterPanel} > <Icon name="filter" size={18} extraClass="mr-1" /> Filter by Skill </button> {#if canAddPerformer} <Button onclick={() => (showAddPerformerModal = true)}> {#snippet children()} <Icon name="plus" size={18} extraClass="mr-1" /> Add Performer {/snippet} </Button> {/if} </div> </div> </div>

@@ -20,7 +20,7 @@ export interface ModuleDefinition {
   sections: Section[];
 }
 
-// Predefined module configurations for CircusSync
+// Predefined module configurations for Ringmaster
 export const circusSyncModules: ModuleDefinition[] = [
   {
     id: 'dashboard',

@@ -1,5 +1,5 @@
 // src/lib/types.ts
-// Core data models for the CircusSync application
+// Core data models for the Ringmaster application
 
 export interface Client {
 	id: string;

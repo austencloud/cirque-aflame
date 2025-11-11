@@ -72,7 +72,7 @@
 </script>
 
 <svelte:head>
-	<title>Login - CircusSync</title>
+	<title>Login - Ringmaster</title>
 </svelte:head>
 
 <div class="login-page">
@@ -81,7 +81,7 @@
 			<!-- Logo/Brand -->
 			<div class="brand">
 				<Icon name="Sparkles" size={48} />
-				<h1>CircusSync</h1>
+				<h1>Ringmaster</h1>
 				<p>Entertainment Management Platform</p>
 			</div>
 

@@ -14,9 +14,9 @@ export default defineConfig({
 			base: '/',
 			selfDestroying: process.env.SELF_DESTROYING_SW === 'true',
 			manifest: {
-				short_name: 'CircusSync',
-				name: 'CircusSync - Circus Production Management',
-				description: 'Complete circus business management for clients, performers, events, contracts, and agents',
+				short_name: 'Ringmaster',
+				name: 'Ringmaster - Circus Production Management',
+				description: 'The ultimate circus business management for clients, performers, events, contracts, and agents',
 				start_url: '/',
 				scope: '/',
 				display: 'standalone',

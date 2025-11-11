@@ -1,6 +1,6 @@
-# CircusSync
+# Ringmaster
 
-Personal circus performance production company management application for tracking clients, performers, events, contracts, and agent relationships.
+The ultimate circus performance production company management application for tracking clients, performers, events, contracts, and agent relationships.
 
 ## Tech Stack
 
@@ -33,7 +33,7 @@ VITE_FIREBASE_APP_ID=
 ## Project Architecture
 
 ```text
-CircusSync (cirque-app)/
+Ringmaster (cirque-app)/
 ├── src/
 │   ├── routes/                    # SvelteKit file-based routing
 │   │   ├── +layout.svelte        # Root layout with navigation

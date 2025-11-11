@@ -149,7 +149,7 @@
 </script>
 
 <svelte:head>
-	<title>Dashboard | CircusSync</title>
+	<title>Dashboard | Ringmaster</title>
 </svelte:head>
 
 <div class="page-container" data-page="dashboard">

@@ -91,7 +91,7 @@ sw.addEventListener('fetch', (event) => {
 					<head>
 						<meta charset="UTF-8">
 						<meta name="viewport" content="width=device-width, initial-scale=1.0">
-						<title>Offline - CircusSync</title>
+						<title>Offline - Ringmaster</title>
 						<style>
 							body {
 								font-family: system-ui, -apple-system, sans-serif;
@@ -136,7 +136,7 @@ sw.addEventListener('fetch', (event) => {
 						<div class="container">
 							<h1>🎪</h1>
 							<h2>You're Offline</h2>
-							<p>CircusSync needs an internet connection to load new pages.</p>
+							<p>Ringmaster needs an internet connection to load new pages.</p>
 							<p>Don't worry - any pages you've already visited are still available!</p>
 							<button onclick="location.reload()">Try Again</button>
 						</div>

@@ -167,7 +167,7 @@
 </script>
 
 <svelte:head>
-	<title>Clients | CircusSync</title>
+	<title>Clients | Ringmaster</title>
 </svelte:head>
 
 <div class="page-container">

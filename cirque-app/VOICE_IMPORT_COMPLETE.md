@@ -2,7 +2,7 @@
 
 ## 🎉 What Was Built
 
-You now have a **complete voice-powered data import system** integrated into your CircusSync dashboard!
+You now have a **complete voice-powered data import system** integrated into your Ringmaster dashboard!
 
 ### Components Created
 

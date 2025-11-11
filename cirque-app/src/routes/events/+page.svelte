@@ -178,7 +178,7 @@
 </script>
 
 <svelte:head>
-	<title>Events | CircusSync</title>
+	<title>Events | Ringmaster</title>
 </svelte:head>
 
 <div class="page-container">

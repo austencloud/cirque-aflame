@@ -75,7 +75,7 @@ test.describe('State Management (Svelte 5 Runes)', () => {
 			.getByRole('link', { name: /dashboard/i })
 			.first()
 			.click();
-		await expect(page.locator('h1')).toContainText('CircusSync');
+		await expect(page.locator('h1')).toContainText('Ringmaster');
 	});
 
 	test('should handle search state correctly', async ({ page }) => {

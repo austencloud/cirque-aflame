@@ -79,7 +79,7 @@
   <div class="sidebar-header">
     <div class="studio-logo">
       <span class="logo-badge">CS</span>
-      <span class="studio-name">CircusSync</span>
+      <span class="studio-name">Ringmaster</span>
     </div>
   </div>
 

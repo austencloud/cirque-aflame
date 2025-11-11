@@ -2,7 +2,7 @@
 
 ## ✨ Complete Redesign Summary
 
-I've completely overhauled the Voice Import component to seamlessly match your CircusSync design system!
+I've completely overhauled the Voice Import component to seamlessly match your Ringmaster design system!
 
 ### 🎯 Design System Integration
 

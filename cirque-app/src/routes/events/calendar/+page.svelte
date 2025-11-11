@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Calendar | CircusSync</title>
+	<title>Calendar | Ringmaster</title>
 </svelte:head>
 
 <div class="page-container">
