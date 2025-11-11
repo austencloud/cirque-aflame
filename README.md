@@ -4,7 +4,12 @@ A modern monorepo for Cirque Aflame circus production company, managing multiple
 
 ## 🏗️ Architecture
 
-This is a **pnpm workspaces + Turborepo** monorepo setup, following 2025 best practices for SvelteKit applications.
+This is a **npm workspaces + Turborepo** monorepo that serves as the **source of truth** for all projects. Individual projects are pushed to separate repositories for deployment using git subtree.
+
+### Multi-Repo Strategy
+- **Monorepo (this repo)**: Source of truth where all development happens
+- **Individual repos**: Mirror repos for deployment and distribution
+- See [MULTI_REPO_SETUP.md](MULTI_REPO_SETUP.md) for detailed setup instructions
 
 ## 📦 Projects
 
@@ -13,6 +18,8 @@ This is a **pnpm workspaces + Turborepo** monorepo setup, following 2025 best pr
 
 - **Tech Stack**: SvelteKit + Svelte 5, TypeScript, Firebase
 - **Purpose**: Complete circus business management (clients, performers, events, contracts, agents)
+- **Includes**: Contract generation PWA at `cirque-app/contracts-pwa/`
+- **Individual Repo**: `cirque-app` (pushed via git subtree)
 - **Status**: ⭐ Production-ready with comprehensive test coverage
 
 ### [`cirque-website`](./cirque-website)
@@ -20,94 +27,77 @@ Public-facing marketing website for Cirque Aflame
 
 - **Tech Stack**: SvelteKit + Svelte 5
 - **Purpose**: Company portfolio and public information
+- **Individual Repo**: `cirque-website` (pushed via git subtree)
 - **Status**: 🚧 Under development
-
-### [`sunday-contract`](./sunday-contract)
-PDF contract generation utility
-
-- **Tech Stack**: Node.js + Puppeteer
-- **Purpose**: Automated contract PDF generation from HTML templates
-- **Status**: ⚙️ Utility tool
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js >= 18.0.0
-- pnpm >= 9.0.0 (install with `npm install -g pnpm@latest`)
+- npm >= 10.0.0
 
 ### Installation
 
 ```bash
 # Install all dependencies across the monorepo
-pnpm install
+npm install
 
 # Run all apps in development mode
-pnpm dev
+npm run dev
 
 # Build all projects
-pnpm build
+npm run build
 
 # Run tests across all projects
-pnpm test
+npm run test
 
 # Format all code
-pnpm format
+npm run format
 ```
 
-### Working with Individual Projects
+## 🔄 Multi-Repo Workflow
+
+### Daily Development
+
+Work in this monorepo as usual. All changes should be made here.
+
+### Pushing to Individual Repos
+
+When ready to deploy or sync to individual repos:
 
 ```bash
-# Run a specific project
-pnpm --filter cirque-app dev
-pnpm --filter cirque-website dev
+# Push all projects to their individual repositories
+./scripts/push-to-repos.sh
 
-# Build a specific project
-pnpm --filter cirque-app build
-
-# Test a specific project
-pnpm --filter cirque-app test
+# Or push a specific project
+./scripts/push-to-repos.sh cirque-app
+./scripts/push-to-repos.sh cirque-website
 ```
+
+See [MULTI_REPO_SETUP.md](MULTI_REPO_SETUP.md) for complete setup instructions.
 
 ## 🔧 Monorepo Tools
 
-- **pnpm workspaces**: Efficient dependency management with symlinks
+- **npm workspaces**: Dependency management across projects
 - **Turborepo**: Intelligent build system with caching and parallel execution
+- **git subtree**: Push projects to individual repositories
 - **Prettier**: Code formatting across all packages
 
 ## 📁 Project Structure
 
 ```
 cirque-aflame-monorepo/
-├── cirque-app/          # Main SaaS application
-├── cirque-website/      # Marketing website
-├── sunday-contract/     # Contract generation tool
-├── package.json         # Root package with monorepo scripts
-├── pnpm-workspace.yaml  # Workspace configuration
-├── turbo.json           # Turborepo pipeline configuration
-└── README.md           # This file
-```
-
-## 🛠️ Development
-
-### Adding Dependencies
-
-```bash
-# Add to root (devDependencies only)
-pnpm add -D <package> -w
-
-# Add to a specific project
-pnpm --filter cirque-app add <package>
-```
-
-### Running Scripts
-
-```bash
-# Run script in all projects that have it
-pnpm -r <script-name>
-
-# Run script in specific project
-pnpm --filter <project-name> <script-name>
+├── cirque-app/               # Main SaaS application
+│   └── contracts-pwa/        # Contract generation PWA (moved from sunday-contract)
+├── cirque-website/           # Marketing website
+├── scripts/
+│   ├── push-to-repos.sh      # Push projects to individual repos
+│   └── setup-remotes.sh      # Configure git remotes
+├── package.json              # Root package with monorepo scripts
+├── turbo.json                # Turborepo pipeline configuration
+├── MULTI_REPO_SETUP.md       # Multi-repo setup guide
+└── README.md                 # This file
 ```
 
 ## 📊 Turborepo Features

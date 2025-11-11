@@ -25,7 +25,7 @@ export type UserRole = 'admin' | 'user' | 'viewer';
 let auth: ReturnType<typeof getAuth> | null = null;
 
 // Initialize auth only in browser
-if (browser) {
+if (browser && app) {
 	auth = getAuth(app);
 }
 

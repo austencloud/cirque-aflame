@@ -33,28 +33,42 @@ VITE_FIREBASE_APP_ID=
 ## Project Architecture
 
 ```text
-src/
-├── routes/                    # SvelteKit file-based routing
-│   ├── +layout.svelte        # Root layout with navigation
-│   ├── +page.svelte          # Dashboard page
-│   ├── clients/              # Client management routes
-│   ├── performers/           # Performer management routes
-│   ├── events/               # Event/gig management routes
-│   ├── agents/               # Agent relationship routes
-│   ├── contracts/            # Contract management routes
-│   └── login/                # Authentication page
-├── lib/
-│   ├── components/           # Reusable Svelte 5 components
-│   ├── config/               # App configuration
-│   ├── firebase.ts           # Firebase initialization
-│   ├── modules/              # Feature-specific modules
-│   ├── services/             # Business logic & Firebase operations
-│   ├── shared/               # Shared utilities across features
-│   ├── state/                # Global state management (Svelte 5 runes)
-│   ├── types.ts              # TypeScript type definitions
-│   └── utils/                # Helper functions
-└── static/                   # Static assets
+CircusSync (cirque-app)/
+├── src/
+│   ├── routes/                    # SvelteKit file-based routing
+│   │   ├── +layout.svelte        # Root layout with navigation
+│   │   ├── +page.svelte          # Dashboard page
+│   │   ├── clients/              # Client management routes
+│   │   ├── performers/           # Performer management routes
+│   │   ├── events/               # Event/gig management routes
+│   │   ├── agents/               # Agent relationship routes
+│   │   ├── contracts/            # Contract management routes
+│   │   └── login/                # Authentication page
+│   ├── lib/
+│   │   ├── components/           # Reusable Svelte 5 components
+│   │   ├── config/               # App configuration
+│   │   ├── firebase.ts           # Firebase initialization
+│   │   ├── modules/              # Feature-specific modules
+│   │   ├── services/             # Business logic & Firebase operations
+│   │   ├── shared/               # Shared utilities across features
+│   │   ├── state/                # Global state management (Svelte 5 runes)
+│   │   ├── types.ts              # TypeScript type definitions
+│   │   └── utils/                # Helper functions
+│   └── static/                   # Static assets
+└── contracts-pwa/                # Standalone contract generation PWA
+    ├── index.html                # Contract form UI
+    ├── main.js                   # Form logic and PDF generation
+    ├── style.css                 # Styling
+    └── vite.config.js            # PWA build configuration
 ```
+
+### Contract Generation PWA
+
+The `contracts-pwa/` directory contains a standalone Progressive Web App for generating Cirque Aflame contracts:
+- **Purpose**: Offline-capable contract PDF generation
+- **Tech**: Vanilla JS + html2pdf.js + Vite PWA plugin
+- **Usage**: Can be deployed separately or accessed via the main app
+- **Features**: Fill forms, generate PDFs, works offline
 
 ## Core Data Models
 
